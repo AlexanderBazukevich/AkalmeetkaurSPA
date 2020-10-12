@@ -1,0 +1,162 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    counter-reset: cellcount;
+
+    &__topic {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            padding-top: 32px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            padding-top: 51px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            padding-top: 58px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            padding-top: 53px;
+        }
+    }
+
+    &__video {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            padding-top: 60px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            padding-top: 105px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            padding-top: 83px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            padding-top: 73px;
+        }
+    }
+    &__blog {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 68px 0 1px;
+            width: calc(100% - 208px);
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            display: inline-flex;
+            justify-content: start;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 0 72px 0 4px;
+            width: calc(100% - 216px);
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            margin-right: 96px;
+            width: calc(100% - 280px);
+        }
+    }
+
+    &__book {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin-top: -11px;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            display: inline-flex;
+            justify-content: start;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 -8px 0 1px;
+            width: calc(100% - 136px);
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 0 -9px 0 4px;
+            width: calc(100% - 140px);
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            margin: 8px -8px 0 0;
+            width: calc(100% - 180px);
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        color: #363B3C;
+        font-family: "PT Sans Caption";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin: 0 0 34px 0;
+            font-size: 20px;
+            letter-spacing: 0.31px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 0 78px 0;
+            font-size: 24px;
+            letter-spacing: 0.37px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: -6px 0 76px 0;
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            margin: -1px 0 73px 0;
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    &__title {
+        position: relative;
+
+        &:before,
+        &:after {
+            position: absolute;
+            top: 50%;
+            content: "";
+            display: block;
+            height: 1px;
+            width: 1000px;
+            background-color: @accent-color-odd;
+        }
+
+        &:before {
+            left: 105%;
+        }
+
+        &:after {
+            right: 105%;
+        }
+    }
+}

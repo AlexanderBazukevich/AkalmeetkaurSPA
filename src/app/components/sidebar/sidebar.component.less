@@ -1,0 +1,87 @@
+.sidebar {
+    display: inline-block;
+    vertical-align: top;
+
+    &_long {
+        margin: 3px 0px 19px 0;
+        letter-spacing: 0.3px;
+
+        &_mobile {
+            display: block;
+        }
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            display: none;
+        }
+    }
+
+    &_short {
+        position: absolute;
+        top: 76px;
+        right: 20px;
+        text-align: right;
+
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            display: none;
+        }
+    }
+
+    &__title,
+    &__item {
+        display: block;
+    }
+
+    &__title {
+        font-family: "PT Sans Caption";
+        font-size: 18px;
+
+        //tablet - desktop
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 0 18px 0;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 0 0 29px 0;
+        }
+        //desktop +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            margin: 0 0 19px 0;
+        }
+
+        &_short {
+            margin: 0 0 18px 0;
+            font-size: 16px;
+
+            //mixins
+            .link_text()
+        }
+    }
+
+    &__item {
+        color: @text-color;
+        font-family: "Didact Gothic";
+        text-decoration: none;
+
+        &_mobile {
+            // mixin
+            .link_menu();
+        }
+
+        //mobile - desktop
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 0 20px 0;
+        }
+        //desktop +
+        @media screen and (min-width: @sizes[desktop]) {
+            margin: 0 0 19px 0;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            // mixin
+            .link_menu();
+        }
+
+    }
+}

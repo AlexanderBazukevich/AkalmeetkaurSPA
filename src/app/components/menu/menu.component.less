@@ -1,0 +1,27 @@
+.menu {
+    &__item {
+        color: @text-color;
+        font-family: "PT Sans Caption";
+        text-decoration: none;
+
+        // mixin
+        .link_menu();
+
+        // mobile to desktop
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop] - 1) {
+            display: block;
+            font-size: 17px;
+            letter-spacing: 0.34px;
+            padding: 0px 0px;
+            margin: 0 0 48px 0;
+        }
+        // desktop+
+        @media screen and (min-width: @sizes[desktop]) {
+            display: inline-block;
+            margin: 3px 0 0 0;
+            padding: 0 15.5px;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+    }
+}

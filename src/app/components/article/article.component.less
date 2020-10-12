@@ -1,0 +1,114 @@
+.article {
+    //mobile - tablet
+    @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+        padding: 0;
+    }
+    //tablet - desktop
+    @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+        padding: 0 75px;
+    }
+    //desktop - desktop_hd
+    @media (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+        padding: 0 166px;
+    }
+    //desktop_hd +
+    @media (min-width: @sizes[desktop_hd]) {
+        padding: 0 200px;
+    }
+
+    &__image {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        font-size: 0;
+
+        //mobile - tablet
+        @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin-bottom: 22px;
+        }
+        //tablet - desktop_hd
+        @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin-bottom: 24px;
+        }
+        //desktop_hd +
+        @media (min-width: @sizes[desktop_hd]) {
+            margin-bottom: 31px;
+        }
+
+        &:nth-child(n + 2) {
+            @media (max-width: @sizes[tablet]) {
+                display: none;
+            }
+        }
+    }
+
+    &__picture {
+        width: 100%;
+
+        &_top {
+            //mobile - tablet
+            @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+                max-width: 100%;
+            }
+            //tablet - desktop_hd
+            @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+                max-width: 38%;
+            }
+            //desktop - desktop_hd
+            @media (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+                max-width: 36%;
+            }
+            //desktop_hd +
+            @media (min-width: @sizes[desktop_hd]) {
+                max-width: 46%;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+
+        &_center {
+            font-family: "Didact Gothic";
+            text-align: center;
+        }
+
+        //mixins
+        .link_text()
+
+    }
+
+    &__title {
+        margin: 17px 0 20px 0;
+        color: #363B3C;
+        font-family: "PT Sans Caption";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            font-size: 20px;
+            letter-spacing: 0.31px;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    &__text {
+        margin: 0 0 24px 0;
+        color: #363B3C;
+        font-family: "Didact Gothic";
+        letter-spacing: 0.01em;
+        line-height: 1.33;
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            font-size: 15px;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            font-size: 16px;
+        }
+    }
+}

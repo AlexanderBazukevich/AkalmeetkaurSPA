@@ -1,0 +1,55 @@
+.button {
+    display: inline-block;
+    padding: 12px 26px;
+    color: #ffffff;
+    font-family: "PT Sans Caption";
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    border-radius: 4px;
+
+    &_blue {
+        background-color: @accent-color;
+
+        &:hover {
+            background-color: #00AAA8;
+        }
+
+        &:active {
+            background-color: @active-color;
+        }
+    }
+
+    &_light {
+        box-sizing: border-box;
+        border: 1px solid #FFFFFF;
+
+        &:hover {
+            color: #FFFFFF;
+            border: 1px solid @accent-color;
+        }
+
+        &:active {
+            color: #FFFFFF;
+            background-color: @accent-color;
+            border: 1px solid @accent-color;
+        }
+    }
+
+    &_dark {
+        color: @text-color;
+        box-sizing: border-box;
+        border: 1px solid @text-color;
+
+        &:hover {
+            color: @accent-color;
+            border: 1px solid @accent-color;
+        }
+
+        &:active {
+            color: #FFFFFF;
+            background-color: @active-color;
+            border: 1px solid @active-color;
+        }
+    }
+}

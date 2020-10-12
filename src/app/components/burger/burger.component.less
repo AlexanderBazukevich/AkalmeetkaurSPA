@@ -1,0 +1,21 @@
+.burger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #F9F9F9;
+    background-image: url(/src/assets/interface/ic_menu_burger.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    //mobile - tablet -1
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+        width: 49px;
+        height: 49px;
+    }
+
+    //tablet - desktop - 1
+    @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+        width: 62px;
+        height: 62px;
+    }
+}

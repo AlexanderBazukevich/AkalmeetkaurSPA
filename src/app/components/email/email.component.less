@@ -1,0 +1,43 @@
+.email {
+
+    &__text {
+        margin: 6px 0 20px 0;
+        color: #ACACAC;
+        font-family: "Didact Gothic";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            font-size: 13px;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            font-size: 16px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 16px;
+        color: #ACACAC;
+        font-family: "Didact Gothic";
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ACACAC;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        &:hover {
+            border: 1px solid @text-color;
+        }
+
+        &:focus {
+            border: 1px solid @active-color;
+        }
+
+        &:visited {
+            color: @text-color;
+        }
+    }
+}

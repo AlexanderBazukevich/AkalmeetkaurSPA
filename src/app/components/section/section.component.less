@@ -1,0 +1,161 @@
+.section {
+    display: flex;
+    flex-wrap: wrap;
+
+    //mobile - tablet
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 19px;
+
+        &:nth-child(n+3) {
+            .section__image {
+                display: none;
+            }
+        }
+    }
+    //tablet +
+    @media screen and (min-width: @sizes[tablet]) {
+        padding-top: 50px;
+    }
+
+    &__image {
+        font-size: 0;
+        text-align: center;
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            max-width: 100%;
+            width: 100%;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            max-width: 50%;
+            width: 50%;
+        }
+    }
+
+    &__picture {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin: 0;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 0 0 -5px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 0 0px 0px -3px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            margin: 0 0px 0px -10px;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        box-sizing: border-box;
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            padding: 22px 0 0px 0;
+            max-width: 100%;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            padding: 0 0 0 36px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            padding: 3px 0 0 45px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            padding: 33px 0 0 64px;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            max-width: 50%;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        color: @text-color;
+        font-family: "PT Sans Caption";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            font-size: 20px;
+            letter-spacing: 0.31px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            font-size: 24px;
+            letter-spacing: 0.37px;
+        }
+        //desktop +
+        @media screen and (min-width: @sizes[desktop]) {
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    &__text {
+        margin: 0 0 26px 0;
+        color: @text-color;
+        font-family: "Didact Gothic";
+        letter-spacing: 0.01em;
+        line-height: 1.33;
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            font-size: 15px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            font-size: 14px;
+        }
+        //desktop +
+        @media screen and (min-width: @sizes[desktop]) {
+            font-size: 16px;
+        }
+
+        &_gray {
+            color: @accent-color-odd;
+            font-size: 16px;
+
+            //mobile - tablet
+            @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+                margin: 4px 0 10px 0;
+            }
+            //tablet - desktop
+            @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+                margin: 2px 0 16px 0;
+            }
+            //desktop - desktop_hd
+            @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+                margin: 2px 0 29px 0;
+            }
+            //desktop_hd +
+            @media screen and (min-width: @sizes[desktop_hd]) {
+                margin: 0 0 26px 0;
+            }
+        }
+    }
+
+    &__purchase {
+
+        //mobile - desktop_hd
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 0;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            margin-right: 95px;
+        }
+    }
+}

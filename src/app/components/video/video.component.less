@@ -1,0 +1,115 @@
+.video {
+    position: relative;
+    box-sizing: border-box;
+    background-image: url(/src/assets/images/photo_3_460w.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &_first {
+        background-color: #F2F2F2;
+        background-image: none;
+    }
+
+    //mobile - tablet
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+        min-height: 248px;
+        width: 100%;
+        padding: 22px 10px 26px 30px;
+    }
+    //tablet +
+    @media screen and (min-width: @sizes[tablet]) {
+        max-width: calc((100% - 20px) / 2);
+    }
+    //tablet - desktop_hd
+    @media screen and (min-width: @sizes[tablet]) {
+        min-height: 300px;
+        padding: 54px 30px 34px;
+    }
+    //desktop_hd +
+    // @media screen and (min-width: @sizes[desktop_hd]) {
+    //     min-height: 296px;
+    //     padding: 54px 30px;
+    // }
+
+    &:nth-child(n + 2) {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin-top: 20px;
+        }
+    }
+
+    &:nth-child(n + 3) {
+
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            margin-top: 20px;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+
+        //mixins
+        .back_overlay()
+    }
+
+    &__title {
+        position: relative;
+        margin: 0;
+        padding-bottom: 10px;
+        color: #ffffff;
+        font-family: "PT Sans Caption";
+        font-size: 26px;
+        letter-spacing: 0.4px;
+
+        &_dark {
+            color: #363B3C;
+
+            //mobile - tablet
+            @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+                margin: 0px 0 10px 0;
+            }
+            //tablet +
+            @media screen and (min-width: @sizes[tablet]) {
+                margin: -3px 0 17px 0;
+            }
+        }
+
+        &:after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #ffffff;
+        opacity: 0.2;
+        }
+    }
+
+    &__text {
+        position: relative;
+        margin: 10px 0 23px 0;
+        color: #ffffff;
+        font-family: "Didact Gothic";
+        font-size: 16px;
+
+        &_dark {
+            color: #363B3C;
+
+            &:after {
+                background-color: #e3e3e3;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__button {
+        position: relative;
+        width: 190px;
+        padding: 12px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,139 @@
+.cover {
+    position: relative;
+    font-size: 0;
+
+    &__content {
+        background: rgba(255, 255, 255, 0.5);
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            padding: 0;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            min-height: 534px;
+            padding: 71px 42px 0 42px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            min-height: 534px;
+            padding: 72px 70px 0 70px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            min-height: 528px;
+            padding: 72px 70px 0 70px;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            max-width: 50%;
+            width: 50%;
+            box-sizing: border-box;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        color: #363B3C;
+        font-family: "PT Sans Caption";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            font-size: 20px;
+            letter-spacing: 0.31px;
+            line-height: 1.17;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            font-size: 24px;
+            letter-spacing: 0.37px;
+            line-height: 1.3;
+        }
+        //desktop +
+        @media screen and (min-width: @sizes[desktop]) {
+            font-size: 26px;
+            letter-spacing: 0.4px;
+            line-height: 1.3;
+        }
+    }
+
+    &__text {
+        color: #363B3C;
+        font-family: "Didact Gothic";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin: 18px 0 23px 0;
+            font-size: 15px;
+            line-height: 1.34;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 17px 0 20px 0;
+            font-size: 14px;
+            line-height: 1.43;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 19px 0 23px 0;
+            font-size: 16px;
+            line-height: 1.37;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            margin: 19px 0 27px 0;
+            font-size: 16px;
+            line-height: 1.37;
+        }
+    }
+
+    &__button {
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            display: none;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            padding: 12px 13px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            padding: 12px 15px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd]) {
+            padding: 11px 25px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        z-index: -1;
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            display: none;
+        }
+    }
+
+    &__picture {
+        position: absolute;
+        right: 50%;
+
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            transform: translateX(40%);
+        }
+        //desktop +
+        @media screen and (min-width: @sizes[desktop]) {
+            transform: translateX(50%);
+        }
+    }
+}

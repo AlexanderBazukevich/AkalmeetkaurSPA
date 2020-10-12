@@ -1,0 +1,37 @@
+// MIXINS
+.link_menu() {
+    text-decoration: none;
+
+    &:hover {
+        background-color: @hover-color;
+    }
+
+    &:active {
+        &:hover {
+            background-color: initial;
+        }
+        color: @active-color;
+    }
+}
+
+.link_text() {
+    color: #009592;
+    text-decoration: underline;
+
+    &:hover {
+        color: #009592;
+        text-decoration: none;
+    }
+    &:active {
+        color: #00bfc0;
+        text-decoration: none;
+    }
+}
+
+.back_overlay() {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, .5);
+}

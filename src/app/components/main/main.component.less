@@ -1,0 +1,82 @@
+.main {
+    min-height: calc(100% - 175px);
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    //mobile - tablet
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+        // margin: auto 0;
+        
+        &__overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: opacity .5s, background-color .5s, z-index .5s;
+            background-color: transparent;
+            z-index: -1;
+
+            &_show {
+                opacity: .5;
+                background-color: gray;
+                z-index: 100;
+            }
+        }
+    }
+
+    &__title {
+        color: #363B3C;
+        font-family: "PT Sans Caption";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin: 0 0px 67px 0px;
+            font-size: 20px;
+            letter-spacing: 0.31px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 11px 0px 28px 0px;
+            font-size: 24px;
+            letter-spacing: 0.37px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: 2px 0px 28px 4px;
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            margin: 2px 0px 28px -2px;
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    @media screen {
+
+        //mobile - tablet
+        @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            max-width: 768px - 40px;
+            padding: 23px 20px;
+        }
+        //tablet - desktop
+        @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            max-width: 1024px - 80px;
+            padding: 20px 20px 50px;
+        }
+        //desktop - desktop_hd
+        @media (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            max-width: 1440px - 260px;
+            padding: 31px 42px 50px;
+        }
+        //desktop_hd +
+        @media  (min-width: @sizes[desktop_hd]) {
+            max-width: 1440px - 260px;
+            padding: 50px 0 61px;
+        }
+    }
+}
