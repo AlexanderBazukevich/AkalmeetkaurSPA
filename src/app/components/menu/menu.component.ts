@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  menuItems;
+
+  constructor(private service: DataService) { }
 
   ngOnInit(): void {
+    this.menuItems = this.service.getPages();
   }
 
+  onChange(value: string): void {
+    this.service.setPageTitle(value);
+  }
 }

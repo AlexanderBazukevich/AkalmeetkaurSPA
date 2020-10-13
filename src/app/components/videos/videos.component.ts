@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-videos',
   templateUrl: './videos.component.html',
-  styleUrls: ['./videos.component.less']
+  styleUrls: []
 })
 export class VideosComponent implements OnInit {
 
@@ -11,5 +11,4 @@ export class VideosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
