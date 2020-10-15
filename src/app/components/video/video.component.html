@@ -1,4 +1,11 @@
-<i class="video__overlay"></i>
-<h1 class="video__title">Женские практики</h1>
-<p class="video__text">Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).</p>
-<a class="button button_light video__button" href="#">Смотреть видео</a>
+<div class="video">
+    <div class="video__item" *ngFor="let video of videos">
+        <i class="video__overlay"></i>
+        <h1 class="video__title">{{ video.title }}</h1>
+        <p class="video__text">{{ video.text }}</p>
+        <a class="button button_blue video__button" *ngIf="video.purchase; else watchBlock">Купить видео</a>
+        <ng-template #watchBlock>
+            <a class="button button_light video__button">Смотреть видео</a>
+        </ng-template>
+    </div>
+</div>

@@ -1,1 +1,4 @@
-<a class="menu__item" *ngFor="let item of menuItems" routerLink="{{ item.route }}" routerLinkActive="menu__item_active" #menuItem (click)="onChange(menuItem.innerText)">{{ item.title }}</a>
+<a class="menu__item" routerLink="/home" routerLinkActive="menu__item_active" (click)="onChange($event)">О курсе</a>
+<a class="menu__item" routerLink="/videos" routerLinkActive="menu__item_active" (click)="onChange($event)">Видео</a>
+<a class="menu__item" routerLink="/library" routerLinkActive="menu__item_active" (click)="onChange($event)">Библиотека</a>
+<a class="menu__item" routerLink="/blog" routerLinkActive="menu__item_active" (click)="onChange($event)">Блог</a>

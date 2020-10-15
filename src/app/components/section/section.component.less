@@ -6,17 +6,13 @@
     @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
         flex-direction: column;
         align-items: center;
-        padding-top: 19px;
+        // padding-top: 19px;
 
         &:nth-child(n+3) {
             .section__image {
                 display: none;
             }
         }
-    }
-    //tablet +
-    @media screen and (min-width: @sizes[tablet]) {
-        padding-top: 50px;
     }
 
     &__image {
@@ -125,37 +121,27 @@
         }
 
         &_gray {
-            color: @accent-color-odd;
-            font-size: 16px;
-
-            //mobile - tablet
-            @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
-                margin: 4px 0 10px 0;
+            :first-child {
+                color: @accent-color-odd;
+                font-size: 16px;
+    
+                //mobile - tablet
+                @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+                    margin: 4px 0 10px 0;
+                }
+                //tablet - desktop
+                @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+                    margin: 2px 0 16px 0;
+                }
+                //desktop - desktop_hd
+                @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+                    margin: 2px 0 29px 0;
+                }
+                //desktop_hd +
+                @media screen and (min-width: @sizes[desktop_hd]) {
+                    margin: 0 0 26px 0;
+                }
             }
-            //tablet - desktop
-            @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
-                margin: 2px 0 16px 0;
-            }
-            //desktop - desktop_hd
-            @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
-                margin: 2px 0 29px 0;
-            }
-            //desktop_hd +
-            @media screen and (min-width: @sizes[desktop_hd]) {
-                margin: 0 0 26px 0;
-            }
-        }
-    }
-
-    &__purchase {
-
-        //mobile - desktop_hd
-        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
-            margin: 0;
-        }
-        //desktop_hd +
-        @media screen and (min-width: @sizes[desktop_hd]) {
-            margin-right: 95px;
         }
     }
 }

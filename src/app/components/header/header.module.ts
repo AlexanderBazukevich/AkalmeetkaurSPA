@@ -13,7 +13,10 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     SocialComponent
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule, 
+    RouterModule
+  ],
   exports: [HeaderComponent]
 })
 export class HeaderModule { }

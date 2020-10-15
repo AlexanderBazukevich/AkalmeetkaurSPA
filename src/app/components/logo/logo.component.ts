@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-logo',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: DataService) { }
 
   ngOnInit(): void {
   }
 
+  //TODO how to avoid duplication of this method with menu component???
+  onClick(value: string): void {
+    this.service.setPageTitle(value);
+  }
 }
