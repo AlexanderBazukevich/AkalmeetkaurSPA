@@ -7,7 +7,6 @@ import { MainModule } from './components/main/main.module';
 import { HeaderModule } from './components/header/header.module';
 
 import { AppComponent } from './app.component';
-import { ArticleComponent } from './components/article/article.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { BurgerComponent } from './components/burger/burger.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -20,7 +19,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
     AsideComponent,
     BurgerComponent,
     ButtonComponent,

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LibraryPageComponent } from './library-page.component';
-
+import { ArticleComponent } from './article.component';
 const routes: Routes = [
   {
     path: '',
-    component: LibraryPageComponent
+    component: ArticleComponent
   }
-];
+]
 
 @NgModule({
   declarations: [],
@@ -16,4 +15,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class LibraryPageRoutingModule { }
+export class ArticleRoutingModule { }

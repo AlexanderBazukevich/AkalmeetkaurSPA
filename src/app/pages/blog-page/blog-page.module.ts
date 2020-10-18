@@ -4,6 +4,7 @@ import { BlogPageRoutingModule } from './blog-page-routing.module';
 import { BlogComponent } from 'src/app/components/blog/blog.component';
 import { BlogPageComponent } from './blog-page.component';
 import { SliderModule } from 'src/app/components/slider/slider.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { SliderModule } from 'src/app/components/slider/slider.module';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     SliderModule,
     BlogPageRoutingModule
   ],

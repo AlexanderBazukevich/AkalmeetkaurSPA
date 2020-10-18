@@ -1,0 +1,37 @@
+@import '/src/common/variables.less';
+
+.breadcrump {
+    margin: 0;
+    font-size: 0.8em;
+    background: none;
+
+    &a,
+    &span {
+        color: @accent-color-odd;
+    }
+
+    &a:hover,
+    &span:hover {
+        color: @accent-color;
+        text-decoration: none;
+    }
+
+    &li {
+        margin: 5px;
+        list-style: none;
+        float: left;
+
+        &:last-child {
+            margin-right: 20px;
+
+            &::after {
+                content: " ";
+            }
+        }
+
+        &::after {
+            content: "->";
+            color: @accent-color-odd;
+        }
+    }
+}

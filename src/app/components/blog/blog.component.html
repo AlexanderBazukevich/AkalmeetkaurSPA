@@ -1,27 +1,7 @@
 <div class="blog">
-    <div class="blog__item">
-        <div class="blog__image"><img class="blog__picture" src="./assets/images/photo_1.png"></div>
-        <p class="blog__date">04.03.2019</p>
-        <a class="blog__title" href="article.html">Что такое Шакти-данс?</a>
-    </div>
-    <div class="blog__item">
-        <div class="blog__image"><img class="blog__picture" src="./assets/images/blog.jpg"></div>
-        <p class="blog__date">04.03.2019</p>
-        <a class="blog__title" href="article.html">Как с помощью дыхания избавиться от вредных привычек и не только</a>
-    </div>
-    <div class="blog__item">
-        <div class="blog__image"><img class="blog__picture" src="./assets/images/photo_1.png"></div>
-        <p class="blog__date">04.03.2019</p>
-        <a class="blog__title" href="article.html">Почему кундалини Йога работает всегда. Часть 2</a>
-    </div>
-    <div class="blog__item">
-        <div class="blog__image"><img class="blog__picture" src="./assets/images/photo_1.png"></div>
-        <p class="blog__date">04.03.2019</p>
-        <a class="blog__title" href="article.html">Как с помощью дыхания избавиться от вредных привычек и не только</a>
-    </div>
-    <div class="blog__item">
-        <div class="blog__image"><img class="blog__picture" src="./assets/images/photo_1.png"></div>
-        <p class="blog__date">04.03.2019</p>
-        <a class="blog__title" href="article.html">Гнев</a>
+    <div class="blog__item" *ngFor="let blog of blogs">
+        <div class="blog__image"><img class="blog__picture" src="{{ blog.imageUrl }}"></div>
+        <p class="blog__date">{{ blog.date }}</p>
+        <a class="blog__title" routerLink="article">{{ blog.title }}</a>
     </div>
 </div>

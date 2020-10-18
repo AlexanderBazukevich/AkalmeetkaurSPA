@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
+import { Cause } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-causes',
@@ -8,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class CausesComponent implements OnInit {
 
-  causes;
+  causes: Cause[];
 
   constructor(private service: DataService) { }
 

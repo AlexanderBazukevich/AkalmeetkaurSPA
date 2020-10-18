@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
+import { Video } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-video',
@@ -8,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class VideoComponent implements OnInit {
 
-  videos;
+  videos: Video[];
 
   constructor(private service: DataService) { }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -7,13 +6,8 @@ import { DataService } from 'src/app/data.service';
 })
 export class MainComponent implements OnInit {
 
-  title: string;
-
-  constructor(private service: DataService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.service.getPageTitle().subscribe( value => {
-      this.title = value;
-    });
   }
 }

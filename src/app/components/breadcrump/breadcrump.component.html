@@ -1,0 +1,3 @@
+<ol class="breadcrump">
+    <a *ngFor="let breadcrump of breadcrumps" [routerLink]="breadcrump.url" routerLinkActive="router-link-active">{{ breadcrump.label }}/</a>
+</ol>
