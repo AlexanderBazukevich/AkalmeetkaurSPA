@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadCrump } from 'src/app/interfaces';
-import { Router, ActivatedRoute } from '@angular/router';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-breadcrump',
   templateUrl: './breadcrump.component.html',
-  styleUrls: ['./breadcrump.component.less']
+  styleUrls: []
 })
 export class BreadcrumpComponent implements OnInit {
 
-  public breadcrumps: BreadCrump[];
+  public breadcrumps: string[];
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    ) {
-      // this.breadcrumps = this.buildBreadCrumps(this.activatedRoute.root);
-    }
+      public router: Router
+    ) {}
 
   ngOnInit(): void {
-    console.log(this.route.url);
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd))
+        .subscribe((event: RouterEvent) => {
+          this.buildBreadCrumps(event.url);
+        });
   }
 
-  buildBreadCrumps(
-    // route: ActivatedRoute,
-    // url: string = '',
-    // breadcrumbs: BreadCrump[] = []
-  ) {
-
+  buildBreadCrumps(url: string) {
+    this.breadcrumps = [];
+    url.split('/').splice(1).forEach( el => {
+      this.breadcrumps.push(el)
+    });
   }
 
 }
