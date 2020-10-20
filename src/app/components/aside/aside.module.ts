@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header.component';
-import { RouterModule } from '@angular/router';
 import { LogoModule } from '../logo/logo.module';
-import { BurgerComponent } from '../burger/burger.component';
+import { AsideComponent } from './aside.component';
+import { RouterModule } from '@angular/router';
 import { MenuModule } from '../menu/menu.module';
 import { SocialModule } from '../social/social.module';
+import { CopyrightModule } from '../copyright/copyright.module';
 
 @NgModule({
-  declarations: [
-    BurgerComponent,
-    HeaderComponent
-  ],
+  declarations: [AsideComponent],
   imports: [
     CommonModule,
+    CopyrightModule,
     LogoModule,
     MenuModule,
     RouterModule,
     SocialModule
   ],
-  exports: [HeaderComponent]
+  exports: [AsideComponent]
 })
-export class HeaderModule { }
+export class AsideModule { }

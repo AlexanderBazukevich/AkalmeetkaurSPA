@@ -1,4 +1,6 @@
-<a class="menu__item" routerLink="home" routerLinkActive="menu__item_active">О курсе</a>
-<a class="menu__item" routerLink="videos" routerLinkActive="menu__item_active">Видео</a>
-<a class="menu__item" routerLink="library" routerLinkActive="menu__item_active">Библиотека</a>
-<a class="menu__item" routerLink="blog" routerLinkActive="menu__item_active">Блог</a>
+<div class="menu" [ngClass]="{header__menu: header, aside__menu: aside}">
+    <a class="menu__item" routerLink="/home" routerLinkActive="menu__item_active">О курсе</a>
+    <a class="menu__item" routerLink="/videos" routerLinkActive="menu__item_active">Видео</a>
+    <a class="menu__item" routerLink="/library" routerLinkActive="menu__item_active">Библиотека</a>
+    <a class="menu__item" routerLink="/blog" routerLinkActive="menu__item_active">Блог</a>
+</div>

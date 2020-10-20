@@ -6,6 +6,7 @@ import { CoverComponent } from 'src/app/components/cover/cover.component';
 import { SectionModule } from 'src/app/components/section/section.module';
 import { CausesComponent } from 'src/app/components/causes/causes.component';
 import { VideoModule } from 'src/app/components/video/video.module';
+import { SectionPurchaseModule } from 'src/app/components/section/section-purchase/section-purchase.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { VideoModule } from 'src/app/components/video/video.module';
     CommonModule,
     HomePageRoutingModule,
     SectionModule,
+    SectionPurchaseModule,
     VideoModule
   ]
 })

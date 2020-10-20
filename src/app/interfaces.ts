@@ -2,7 +2,7 @@ import { Data } from '@angular/router';
 
 export interface BreadCrump {
     label: string;
-    url: string;
+    url: any;
 }
 
 export interface Video {
@@ -18,7 +18,7 @@ export interface Cause {
     text: string;
 }
 
-export interface Blog {
+export interface Blog { 
     id: number;
     title: string;
     date: string;

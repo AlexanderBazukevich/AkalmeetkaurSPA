@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { BreadCrump } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-breadcrump',
@@ -9,7 +10,7 @@ import { filter } from 'rxjs/operators';
 })
 export class BreadcrumpComponent implements OnInit {
 
-  public breadcrumps: string[];
+  public breadcrumps: BreadCrump[];
 
   constructor(
       public router: Router
@@ -25,9 +26,18 @@ export class BreadcrumpComponent implements OnInit {
 
   buildBreadCrumps(url: string) {
     this.breadcrumps = [];
-    url.split('/').splice(1).forEach( el => {
-      this.breadcrumps.push(el)
+    url.split('/').splice(1).forEach( (el,i) => {
+      if (i === 0) {
+        this.breadcrumps.push({
+          label: el,
+          url: el
+        });
+      } else {
+        this.breadcrumps.push({
+          label: el,
+          url: this.breadcrumps[i - 1].url + '/' + el
+        });
+      };
     });
   }
-
 }

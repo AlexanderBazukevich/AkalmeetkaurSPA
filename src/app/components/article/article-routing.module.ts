@@ -7,7 +7,6 @@ const routes: Routes = [
     component: ArticleComponent
   }
 ]
-
 @NgModule({
   declarations: [],
   imports: [

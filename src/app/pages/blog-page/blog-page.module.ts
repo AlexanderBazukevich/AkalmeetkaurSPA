@@ -5,6 +5,7 @@ import { BlogComponent } from 'src/app/components/blog/blog.component';
 import { BlogPageComponent } from './blog-page.component';
 import { SliderModule } from 'src/app/components/slider/slider.module';
 import { RouterModule } from '@angular/router';
+import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,11 @@ import { RouterModule } from '@angular/router';
     BlogComponent
   ],
   imports: [
+    BlogPageRoutingModule,
     CommonModule,
-    RouterModule,
-    SliderModule,
-    BlogPageRoutingModule
+    // RouterModule,
+    SidebarModule,
+    SliderModule
   ],
   exports: [
     BlogPageComponent

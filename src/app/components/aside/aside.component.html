@@ -1,1 +1,9 @@
-<p>aside works!</p>
+<div class="aside aside_hidden">
+    <a class="aside__cleaner" href="#"><i class="fas fa-times"></i></a>
+    <div class="aside__content">
+        <app-menu [location]="current"></app-menu>
+        <app-logo [location]="current"></app-logo>
+        <app-copyright [location]="current"></app-copyright>
+        <app-social [location]="current"></app-social>
+    </div>
+</div>
