@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { NgControlStatusGroup } from '@angular/forms';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Video, Cause , Blog, Book } from './interfaces';
 
 @Injectable({
@@ -139,7 +141,10 @@ export class DataService {
     },
   ]
 
+  isAsideVisible: BehaviorSubject<boolean>;
+
   constructor() {
+    this.isAsideVisible = new BehaviorSubject<boolean>(true);
   }
 
   getVideos() {
@@ -156,5 +161,13 @@ export class DataService {
 
   getBooks() {
     return this.books;
+  }
+
+  getAsideVisibility() {
+    return this.isAsideVisible.asObservable();
+  }
+
+  setAsideVisibility(value: boolean) {
+    this.isAsideVisible.next(value);
   }
 }

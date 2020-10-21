@@ -1,5 +1,5 @@
-<div class="aside aside_hidden">
-    <a class="aside__cleaner" href="#"><i class="fas fa-times"></i></a>
+<div class="aside" [class.aside_hidden]="!asideVisible">
+    <a class="aside__cleaner" href="#" (click)="onClick($event)"><i class="fas fa-times"></i></a>
     <div class="aside__content">
         <app-menu [location]="current"></app-menu>
         <app-logo [location]="current"></app-logo>

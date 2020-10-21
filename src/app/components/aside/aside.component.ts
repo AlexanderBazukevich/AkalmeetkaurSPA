@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-aside',
@@ -8,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class AsideComponent implements OnInit {
 
   current = "aside";
+  asideVisible: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private service: DataService) {
   }
 
+  ngOnInit(): void {
+    this.service.getAsideVisibility().subscribe( value => {
+      this.asideVisible = value;
+    })
+  }
+  
+  onClick(event) {
+    event.preventDefault();
+    this.service.getAsideVisibility().subscribe( value => this.asideVisible = value)
+    this.service.setAsideVisibility(!this.asideVisible);
+  }
 }

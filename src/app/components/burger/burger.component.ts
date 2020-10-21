@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-burger',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BurgerComponent implements OnInit {
 
-  constructor() { }
+  asideVisible: boolean;
+
+  constructor(private service: DataService) { }
 
   ngOnInit(): void {
   }
 
+  onClick(event) {
+    event.preventDefault();
+    this.service.getAsideVisibility().subscribe( value => this.asideVisible = value)
+    this.service.setAsideVisibility(!this.asideVisible);
+  }
 }
