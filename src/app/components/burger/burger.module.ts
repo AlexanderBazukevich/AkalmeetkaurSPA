@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SocialComponent } from './social.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faFacebookF, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { BurgerComponent } from './burger.component';
 
 @NgModule({
-  declarations: [SocialComponent],
+  declarations: [BurgerComponent],
   imports: [
     CommonModule,
     FontAwesomeModule
   ],
-  exports: [SocialComponent]
+  exports: [BurgerComponent]
 })
-export class SocialModule {
+export class BurgerModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faFacebookF, faYoutube, faInstagram)
+    library.addIcons(faBars);
   }
 }

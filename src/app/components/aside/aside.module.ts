@@ -6,12 +6,15 @@ import { RouterModule } from '@angular/router';
 import { MenuModule } from '../menu/menu.module';
 import { SocialModule } from '../social/social.module';
 import { CopyrightModule } from '../copyright/copyright.module';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [AsideComponent],
   imports: [
     CommonModule,
     CopyrightModule,
+    FontAwesomeModule,
     LogoModule,
     MenuModule,
     RouterModule,
@@ -19,4 +22,8 @@ import { CopyrightModule } from '../copyright/copyright.module';
   ],
   exports: [AsideComponent]
 })
-export class AsideModule { }
+export class AsideModule {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faTimes);
+  }
+ }

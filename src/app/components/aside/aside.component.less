@@ -26,6 +26,21 @@
             width: 62px;
             height: 62px;
         }
+
+        &:first-child {
+            color: @text-color;
+            box-sizing: border-box;
+    
+            @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+                padding: 10px 0 0 15px;
+                font-size: 1.5em;
+            }
+    
+            @media screen and (min-width: @sizes[tablet]) {
+                padding: 15px 0 0 20px;
+                font-size: 2em;
+            }
+        }
     }
 
     &__content {

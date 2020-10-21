@@ -18,10 +18,10 @@ import { AsideModule } from './components/aside/aside.module';
     AsideModule,
     CommonModule,
     BrowserModule,
-    RoutingModule,
     HeaderModule,
     FooterModule,
-    MainModule
+    MainModule,
+    RoutingModule,
   ],
   providers: [
   ],
