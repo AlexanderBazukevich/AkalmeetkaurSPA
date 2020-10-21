@@ -9,7 +9,9 @@ export interface Video {
     id: number;
     title: string;
     text: string;
-    purchase: boolean;
+    purchase?: boolean;
+    homepage?: boolean;
+    first?: boolean;
 }
 
 export interface Cause {

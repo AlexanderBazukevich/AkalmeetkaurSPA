@@ -15,6 +15,16 @@
         }
     }
 
+    //mobile - decktop_hd
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
+        padding-top: 30px;
+    }
+
+    //desktop_hd+
+    @media screen and (min-width: @sizes[desktop_hd]) {
+        padding-top: 50px;
+    }
+
     &__image {
         font-size: 0;
         text-align: center;

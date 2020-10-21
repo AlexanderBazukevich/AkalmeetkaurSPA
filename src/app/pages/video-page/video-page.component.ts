@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoPageComponent implements OnInit {
 
+  current: string = 'videospage';
+
   constructor() { }
 
   ngOnInit(): void {

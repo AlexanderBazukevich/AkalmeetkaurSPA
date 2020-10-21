@@ -7,6 +7,16 @@
         display: none;
     }
 
+    //mobile - decktop_hd
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
+        margin-top: 30px;
+    }
+
+    //desktop_hd+
+    @media screen and (min-width: @sizes[desktop_hd]) {
+        margin-top: 50px;
+    }
+
     &__content {
         display: flex;
         align-items: center;
