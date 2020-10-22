@@ -1,10 +1,10 @@
-<div class="video video_homepage" *ngIf="location === 'homepage'; else videosPage">
-    <div class="video__item" *ngFor="let video of homepageVideos">
-        <i class="video__overlay" *ngIf="!video.first"></i>
-        <h1 class="video__title" [class.video__title_dark]="video.first">{{ video.title }}</h1>
-        <p class="video__text" [class.video__text_dark]="video.first">{{ video.text }}</p>
+<div class="video video_homepage" *ngIf="location === 'homepage'; else videosPage;">
+    <div class="video__item" *ngFor="let video of homepageVideos; let i = index">
+        <i class="video__overlay" *ngIf="i !== 0"></i>
+        <h1 class="video__title" [class.video__title_dark]="i === 0">{{ video.title }}</h1>
+        <p class="video__text" [class.video__text_dark]="i === 0">{{ video.text }}</p>
         <a class="button button_blue video__button" *ngIf="video.purchase; else watchButton">Купить видео</a>
-        <ng-template #watchButton *ngIf="!video.first; else firstButton">
+        <ng-template #watchButton *ngIf="i !== 0; else firstButton">
             <a class="button button_light video__button">Смотреть видео</a>
         </ng-template>
         <ng-template #firstButton>

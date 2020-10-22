@@ -9,10 +9,10 @@ import { HeaderModule } from './components/header/header.module';
 import { FooterModule } from './components/footer/footer.module';
 import { AsideModule } from './components/aside/aside.module';
 
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     AsideModule,

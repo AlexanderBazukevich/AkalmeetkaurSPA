@@ -31,3 +31,10 @@ export interface Book {
     title: string;
     text: string;
 }
+
+export interface Section {
+    imageTitle: string;
+    title: string;
+    subtitle?: string;
+    text: string;
+}

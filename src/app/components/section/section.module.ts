@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SectionBioComponent } from './section-bio/section-bio.component';
+import { SectionComponent } from './section.component';
 
 @NgModule({
   declarations: [
-    SectionBioComponent
+    SectionComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SectionBioComponent
+    SectionComponent
   ]
 })
 export class SectionModule { }

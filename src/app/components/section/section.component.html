@@ -1,0 +1,17 @@
+<div class="section">
+    <div class="section__image">
+        <picture class="section__picture">
+            <source *ngIf="first" media="(max-width: 767px)" srcset="assets/images/{{ section.imageTitle }}_280w.jpg">
+            <source media="(max-width: 1023px)" srcset="assets/images/{{ section.imageTitle }}_356w.jpg">
+            <source media="(max-width: 1439px)" srcset="assets/images/{{ section.imageTitle }}_460w.jpg">
+            <source media="(min-width: 1440px)" srcset="assets/images/{{ section.imageTitle }}_580w.jpg">
+            <img src="assets/images/{{ section.imageTitle }}_580w.jpg">
+        </picture>
+    </div>
+    <div class="section__content">
+        <h1 class="section__title">{{ section.title }}</h1>
+        <p class="section__text section__text_gray">{{ section.subtitle}}</p>
+        <div class="section__text" [innerHTML]="section.text"></div>
+        <ng-content></ng-content>
+    </div>
+</div>

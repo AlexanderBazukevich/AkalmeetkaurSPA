@@ -5,13 +5,20 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: BlogPageComponent
+    component: BlogPageComponent,
+    // data: {
+    //   breadcrump: {
+    //     path: ["/", "blog"],
+    //     label: ["Блог"]
+    //   }
+    // }
   },
   {
     path: 'article',
     loadChildren: () =>
       import('src/app/components/article/article.module')
-        .then(m => m.ArticleModule)
+        .then(m => m.ArticleModule),
+
   }
 ]
 

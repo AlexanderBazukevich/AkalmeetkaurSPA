@@ -1,3 +1,4 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -13,7 +14,9 @@ export class BreadcrumpComponent implements OnInit {
   public breadcrumps: BreadCrump[];
 
   constructor(
-      public router: Router
+      // private router: ActivatedRoute,
+      private router: Router
+
     ) {}
 
   ngOnInit(): void {
@@ -22,6 +25,8 @@ export class BreadcrumpComponent implements OnInit {
         .subscribe((event: RouterEvent) => {
           this.buildBreadCrumps(event.url);
         });
+    // this.router.snapshot.params
+    // debugger
   }
 
   buildBreadCrumps(url: string) {
