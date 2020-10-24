@@ -12,7 +12,6 @@ import { AsideModule } from './components/aside/aside.module';
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     AsideModule,

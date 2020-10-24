@@ -7,12 +7,12 @@ import { BlogPageModule } from 'src/app/pages/blog-page/blog-page.module';
 import { VideoPageModule } from 'src/app/pages/video-page/video-page.module';
 import { LibraryPageModule } from 'src/app/pages/library-page/library-page.module';
 import { HomePageModule } from 'src/app/pages/home-page/home-page.module';
-import { BreadcrumpComponent } from '../breadcrump/breadcrump.component';
+import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    BreadcrumpComponent
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,

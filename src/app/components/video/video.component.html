@@ -3,12 +3,12 @@
         <i class="video__overlay" *ngIf="i !== 0"></i>
         <h1 class="video__title" [class.video__title_dark]="i === 0">{{ video.title }}</h1>
         <p class="video__text" [class.video__text_dark]="i === 0">{{ video.text }}</p>
-        <a class="button button_blue video__button" *ngIf="video.purchase; else watchButton">Купить видео</a>
-        <ng-template #watchButton *ngIf="i !== 0; else firstButton">
-            <a class="button button_light video__button">Смотреть видео</a>
+        <a class="button button_dark video__button" *ngIf="i === 0; else purchaseButton">Всё видео курса</a>
+        <ng-template #purchaseButton>
+            <a class="button button_blue video__button" *ngIf="video.purchase; else watchButton">Купить видео</a>
         </ng-template>
-        <ng-template #firstButton>
-            <a class="button button_dark video__button">Всё видео курса</a>
+        <ng-template #watchButton>
+            <a class="button button_light video__button">Смотреть видео</a>
         </ng-template>
     </div>
 </div>
