@@ -32,7 +32,6 @@ export class BreadcrumbComponent implements OnInit {
       return breadcrumbs;
     }
 
-    console.log(route.children)
     for (const child of children) {
       const routeURL: string = child.snapshot.url.map(segment => segment.path).join('/');
       const label = child.snapshot.data.breadcrumb;

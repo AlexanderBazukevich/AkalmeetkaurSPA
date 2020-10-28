@@ -14,7 +14,7 @@ const routes: Routes = [
     },
     loadChildren: () =>
       import('src/app/components/article/article.module')
-        .then(m => m.ArticleModule),
+        .then(m => m.ArticleModule)
   }
 ]
 

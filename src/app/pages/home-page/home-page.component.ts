@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { Section } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-home-page',
@@ -8,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   current: string = 'homepage';
-  firstSection: boolean = true;
 
-  constructor() { }
+  constructor(private service: DataService) { }
+
+  sections: Section[];
 
   ngOnInit(): void {
+    this.sections = this.service.getSections()
   }
-
 }

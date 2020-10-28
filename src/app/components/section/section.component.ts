@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
+import { Component, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Section } from 'src/app/interfaces';
 
 @Component({
@@ -7,15 +7,13 @@ import { Section } from 'src/app/interfaces';
   templateUrl: './section.component.html',
   styleUrls: []
 })
-export class SectionComponent implements OnInit {
+export class SectionComponent {
 
-  @Input() first: boolean;
-  
-  section: Section;
+  @Input() sectionData: Section;
 
-  constructor(private service: DataService) { }
+  constructor(private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
-    this.first ? this.section = this.service.getSections()[0] : this.section = this.service.getSections()[1];
+  get sectionText(): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(this.sectionData.text)
   }
 }
