@@ -1,8 +1,8 @@
 <div class="blog">
-    <div class="blog__item" *ngFor="let blog of blogs">
-        <div class="blog__image"><img class="blog__picture" src="{{ blog.imageUrl }}"></div>
-        <p class="blog__date">{{ blog.date }}</p>
-        <a class="blog__title" routerLink="article">{{ blog.title }}</a>
+    <div class="blog__item" *ngFor="let article of articles">
+        <div class="blog__image"><img class="blog__picture" src="{{ article.imageUrl }}"></div>
+        <p class="blog__date">{{ article.date }}</p>
+        <a class="blog__title" [routerLink]="['article', article.id]">{{ article.title }}</a>
     </div>
     <app-slider></app-slider>
 </div>

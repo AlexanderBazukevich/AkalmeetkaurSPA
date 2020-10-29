@@ -16,5 +16,4 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
     this.books = this.service.getBooks();
   }
-
 }

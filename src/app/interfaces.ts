@@ -18,12 +18,12 @@ export interface Cause {
     text: string;
 }
 
-export interface Blog { 
-    id: number;
-    title: string;
-    date: string;
-    imageUrl: string;
-}
+// export interface Blog { 
+//     id: number;
+//     title: string;
+//     date: string;
+//     imageUrl: string;
+// }
 
 export interface Book {
     id: number;
@@ -33,8 +33,21 @@ export interface Book {
 }
 
 export interface Section {
-    imageTitle: string;
+    imageFileName: string;
     title: string;
     subtitle?: string;
     text: string;
+}
+
+export interface Article {
+    id: number;
+    imageUrl: string;
+    title: string;
+    date: string;
+    content: ArticleContent[];
+}
+
+interface ArticleContent {
+    text: string;
+    imageUrl?: string;
 }

@@ -8,7 +8,7 @@ const routes: Routes = [
     component: BlogPageComponent
   },
   {
-    path: 'article',
+    path: 'article/:id',
     data: {
       breadcrumb: 'Статья'
     },
