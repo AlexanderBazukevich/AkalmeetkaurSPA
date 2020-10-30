@@ -20,7 +20,7 @@ import { AsideModule } from './components/aside/aside.module';
     HeaderModule,
     FooterModule,
     MainModule,
-    RoutingModule,
+    RoutingModule
   ],
   providers: [
   ],

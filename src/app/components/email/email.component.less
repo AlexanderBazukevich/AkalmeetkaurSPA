@@ -2,8 +2,15 @@
 
     &__text {
         margin: 6px 0 20px 0;
-        color: #ACACAC;
         font-family: "Didact Gothic";
+
+        &_valid {
+            color: #ACACAC;
+        }
+
+        &_invalid {
+            color: #e73c3c;
+        }
 
         //mobile - tablet
         @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
@@ -22,11 +29,18 @@
         font-family: "Didact Gothic";
         font-size: 16px;
         border-radius: 4px;
-        border: 1px solid #ACACAC;
         box-sizing: border-box;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+
+        &_invalid {
+            border: 1px solid #e73c3c;
+        }
+
+        &_valid {
+            border: 1px solid #ACACAC;
+        }
 
         &:hover {
             border: 1px solid @text-color;

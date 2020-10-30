@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PurchaseComponent } from './purchase.component';
 import { EmailComponent } from '../email/email.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { EmailComponent } from '../email/email.component';
     EmailComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [PurchaseComponent]
 })
