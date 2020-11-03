@@ -1,7 +1,13 @@
 <app-cover></app-cover>
 <app-section [sectionData]="sections[0]"></app-section>
 <app-causes></app-causes>
-<app-video [location]="current"></app-video>
+<app-video [videos]="videos">
+    <div class="video__item video__item_homepage">
+        <h1 class="video__title video__title_dark">Приветствие</h1>
+        <p class="video__text video__text_dark">Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).</p>
+        <a class="button button_dark video__button" routerLink="/videos">Всё видео курса</a>
+    </div>
+</app-video>
 <app-section [sectionData]="sections[1]">
     <app-purchase></app-purchase>
 </app-section>

@@ -3,40 +3,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    &_homepage {
-
-        & > div:first-child {
+    &__item {
+        position: relative;
+        box-sizing: border-box;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        &_homepage {
             background-color: #F2F2F2;
             background-image: none;
         }
 
-        //mobile - tablet
-        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
-            padding-top: 60px;
-        }
-        //tablet - desktop
-        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
-            padding-top: 105px;
-        }
-        //desktop - desktop_hd
-        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
-            padding-top: 83px;
-        }
-        //desktop_hd +
-        @media screen and (min-width: @sizes[desktop_hd] - 1) {
-            padding-top: 73px;
-        }
-    }
-
-    &__item {
-        position: relative;
-        box-sizing: border-box;
-        background-image: url(/assets/images/photo_3_580w.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-    
         //mobile - tablet
         @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
             min-height: 248px;
@@ -66,6 +44,48 @@
             //tablet +
             @media screen and (min-width: @sizes[tablet]) {
                 margin-top: 20px;
+            }
+        }
+    }
+
+    &__popup {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity .2s ease-in-out;
+        opacity: 1;
+        z-index: 100;
+
+        &_hidden {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+    &__player {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__cleaner {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 20px;
+        height: 20px;
+
+        & > {
+            color: @accent-color-odd;
+            box-sizing: border-box;
+            padding-left: 3px;
+            font-size: 1.3em;
+            transition: color .1s ease-out;
+
+            &:hover {
+                color: @active-color;
             }
         }
     }

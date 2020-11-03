@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { Section } from 'src/app/interfaces';
+import { Section, Video } from 'src/app/interfaces';
+import { SectionService } from 'src/app/services/section/section.service';
+import { VideoService } from 'src/app/services/video/video.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,13 +10,15 @@ import { Section } from 'src/app/interfaces';
 })
 export class HomePageComponent implements OnInit {
 
-  current: string = 'homepage';
-
-  constructor(private service: DataService) { }
-
+  videos: Video[];
   sections: Section[];
 
+  constructor(private videoService: VideoService, private sectionService: SectionService) { }
+
   ngOnInit(): void {
-    this.sections = this.service.getSections()
+    this.sections = this.sectionService.getSections()
+    this.videos = this.videoService.getVideos({filter: {
+      promo: true
+    }});
   }
 }

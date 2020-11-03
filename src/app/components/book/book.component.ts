@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 import { Book } from 'src/app/interfaces';
+import { BookService } from 'src/app/services/book/book.service';
 
 @Component({
   selector: 'app-book',
@@ -11,7 +11,7 @@ export class BookComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private service: DataService) { }
+  constructor(private service: BookService) { }
 
   ngOnInit(): void {
     this.books = this.service.getBooks();

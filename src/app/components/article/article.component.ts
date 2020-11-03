@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from 'src/app/data.service';
 import { Article } from 'src/app/interfaces';
+import { ArticleService } from 'src/app/services/article/article.service';
 
 @Component({
   selector: 'app-article',
@@ -13,7 +13,7 @@ export class ArticleComponent implements OnInit {
 
   article: Article;
 
-  constructor(private service: DataService, private sanitizer: DomSanitizer, private route: ActivatedRoute) { }
+  constructor(private service: ArticleService, private sanitizer: DomSanitizer, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));

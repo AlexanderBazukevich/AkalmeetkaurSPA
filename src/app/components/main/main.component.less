@@ -30,25 +30,25 @@
         //mobile - tablet
         @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
             max-width: 768px - 40px;
+            padding: 23px 20px;
         }
         //tablet - desktop
         @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
             max-width: 1024px - 80px;
+            padding: 20px 20px 50px;
         }
         //desktop - desktop_hd
         @media (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
             max-width: 1440px - 260px;
-        }
-        //mobile - desktop_hd
-        @media (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
-            padding-top: 30px;
+            padding: 31px 42px 50px;
         }
         //desktop_hd +
         @media  (min-width: @sizes[desktop_hd]) {
             max-width: 1440px - 260px;
-            padding-top: 50px;
+            padding: 50px 0 61px;
         }
     }
+
 
     &__title {
         color: #363B3C;

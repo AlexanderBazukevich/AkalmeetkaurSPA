@@ -7,9 +7,9 @@ export interface Video {
     id: number;
     title: string;
     text: string;
-    purchase?: boolean;
-    homepage?: boolean;
-    first?: boolean;
+    link: string;
+    cover: string;
+    purchase: boolean;
 }
 
 export interface Cause {
@@ -17,13 +17,6 @@ export interface Cause {
     title: string;
     text: string;
 }
-
-// export interface Blog { 
-//     id: number;
-//     title: string;
-//     date: string;
-//     imageUrl: string;
-// }
 
 export interface Book {
     id: number;

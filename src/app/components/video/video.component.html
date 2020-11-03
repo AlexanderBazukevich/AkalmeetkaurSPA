@@ -1,27 +1,23 @@
-<div class="video video_homepage" *ngIf="location === 'homepage'; else videosPage;">
-    <div class="video__item" *ngFor="let video of homepageVideos; let i = index">
-        <i class="video__overlay" *ngIf="i !== 0"></i>
-        <h1 class="video__title" [class.video__title_dark]="i === 0">{{ video.title }}</h1>
-        <p class="video__text" [class.video__text_dark]="i === 0">{{ video.text }}</p>
-        <a class="button button_dark video__button" *ngIf="i === 0; else purchaseButton">Всё видео курса</a>
-        <ng-template #purchaseButton>
-            <a class="button button_blue video__button" *ngIf="video.purchase; else watchButton">Купить видео</a>
-        </ng-template>
-        <ng-template #watchButton>
-            <a class="button button_light video__button">Смотреть видео</a>
-        </ng-template>
-    </div>
-</div>
-<ng-template #videosPage>
-    <div class="video">
-        <div class="video__item" *ngFor="let video of videos">
+<div class="video">
+    <ng-content></ng-content>
+
+    <ng-container *ngFor="let video of videos; let i = index">
+        <div class="video__item" [style.backgroundImage]="'url(/assets/images/photo_3_580w.jpg)'">
             <i class="video__overlay"></i>
             <h1 class="video__title">{{ video.title }}</h1>
             <p class="video__text">{{ video.text }}</p>
             <a class="button button_blue video__button" *ngIf="video.purchase; else watchBlock">Купить видео</a>
             <ng-template #watchBlock>
-                <a class="button button_light video__button">Смотреть видео</a>
+                <a class="button button_light video__button" (click)="onClick(i)">Смотреть видео</a>
             </ng-template>
+            <ng-container *ngIf="!video.purchase">
+                <div class="video__popup" [class.video__popup_hidden]="hiddenVideos[i]">
+                    <iframe class="video__player" [src]="videoLink[i]" frameborder="0" allowfullscreen></iframe>
+                    <div class="video__cleaner" (click)="onClick(i)">
+                        <fa-icon [icon]="['fas', 'times']"></fa-icon>
+                    </div>
+                </div>
+            </ng-container>
         </div>
-    </div>
-</ng-template>
+    </ng-container>
+</div>

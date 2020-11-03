@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 import { Cause } from 'src/app/interfaces';
+import { CausesService } from 'src/app/services/causes/causes.service';
 
 @Component({
   selector: 'app-causes',
@@ -11,7 +11,7 @@ export class CausesComponent implements OnInit {
 
   causes: Cause[];
 
-  constructor(private service: DataService) { }
+  constructor(private service: CausesService) { }
 
   ngOnInit(): void {
     this.causes = this.service.getCauses();
