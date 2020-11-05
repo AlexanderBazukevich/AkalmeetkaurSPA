@@ -64,7 +64,7 @@
         }
     }
 
-    &__player {
+    &__player > * {
         width: 100%;
         height: 100%;
     }
@@ -76,17 +76,14 @@
         left: 100%;
         width: 20px;
         height: 20px;
+        color: @accent-color-odd;
+        box-sizing: border-box;
+        padding-left: 3px;
+        font-size: 1.3em;
+        transition: color .1s ease-out;
 
-        & > {
-            color: @accent-color-odd;
-            box-sizing: border-box;
-            padding-left: 3px;
-            font-size: 1.3em;
-            transition: color .1s ease-out;
-
-            &:hover {
-                color: @active-color;
-            }
+        &:hover {
+            color: @active-color;
         }
     }
     

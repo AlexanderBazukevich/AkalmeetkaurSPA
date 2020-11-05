@@ -12,7 +12,8 @@
             </ng-template>
             <ng-container *ngIf="!video.purchase">
                 <div class="video__popup" [class.video__popup_hidden]="hiddenVideos[i]">
-                    <iframe class="video__player" [src]="videoLink[i]" frameborder="0" allowfullscreen></iframe>
+                    <!-- <iframe class="video__player" [src]="videoLink[i]" frameborder="0" allowfullscreen></iframe> -->
+                    <youtube-player class="video__player" [videoId]="videosId[i]"></youtube-player>
                     <div class="video__cleaner" (click)="onClick(i)">
                         <fa-icon [icon]="['fas', 'times']"></fa-icon>
                     </div>

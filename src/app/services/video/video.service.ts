@@ -11,7 +11,7 @@ export class VideoService {
       id: 1,
       title: 'Приветствие',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'https://www.youtube.com/embed/y7Qkprf89B4',
+      link: 'K9YVpXiXvag',
       cover: 'http://www.you/preview.png',
       purchase: false
     },
@@ -19,7 +19,7 @@ export class VideoService {
       id: 2,
       title: 'Женские практики',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'https://www.youtube.com/embed/y7Qkprf89B4',
+      link: 'b_fKzTdMViQ',
       cover: 'http://www.you/preview.png',
       purchase: true
     },
@@ -27,7 +27,7 @@ export class VideoService {
       id: 3,
       title: 'Избавление от гнева',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'https://www.youtube.com/embed/y7Qkprf89B4',
+      link: 'b_fKzTdMViQ',
       cover: 'http://www.you/preview.png',
       purchase: true,
       
@@ -36,7 +36,7 @@ export class VideoService {
       id: 4,
       title: 'Женские практики',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'https://www.youtube.com/embed/y7Qkprf89B4',
+      link: 'b_fKzTdMViQ',
       cover: 'http://www.you/preview.png',
       purchase: false,
     },
@@ -44,7 +44,7 @@ export class VideoService {
       id: 5,
       title: 'Избавление от гнева',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'https://www.youtube.com/embed/y7Qkprf89B4',
+      link: 'b_fKzTdMViQ',
       cover: 'http://www.you/preview.png',
       purchase: false,
     },
@@ -52,7 +52,7 @@ export class VideoService {
       id: 6,
       title: 'Избавление от гнева',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'https://www.youtube.com/embed/y7Qkprf89B4',
+      link: 'b_fKzTdMViQ',
       cover: 'http://www.you/preview.png',
       purchase: false,
     }
