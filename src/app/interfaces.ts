@@ -10,6 +10,7 @@ export interface Video {
     link: string;
     cover: string;
     purchase: boolean;
+    promo?: boolean;
 }
 
 export interface Cause {

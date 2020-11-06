@@ -4,5 +4,5 @@
         <p class="blog__date">{{ article.date }}</p>
         <a class="blog__title" [routerLink]="['article', article.id]">{{ article.title }}</a>
     </div>
-    <app-slider></app-slider>
+    <ng-content></ng-content>
 </div>

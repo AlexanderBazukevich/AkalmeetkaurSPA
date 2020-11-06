@@ -2,7 +2,7 @@
     <ng-content></ng-content>
 
     <ng-container *ngFor="let video of videos; let i = index">
-        <div class="video__item" [style.backgroundImage]="'url(/assets/images/photo_3_580w.jpg)'">
+        <div class="video__item" [style.backgroundImage]="videoCover[i]">
             <i class="video__overlay"></i>
             <h1 class="video__title">{{ video.title }}</h1>
             <p class="video__text">{{ video.text }}</p>
@@ -12,7 +12,6 @@
             </ng-template>
             <ng-container *ngIf="!video.purchase">
                 <div class="video__popup" [class.video__popup_hidden]="hiddenVideos[i]">
-                    <!-- <iframe class="video__player" [src]="videoLink[i]" frameborder="0" allowfullscreen></iframe> -->
                     <youtube-player class="video__player" [videoId]="videosId[i]"></youtube-player>
                     <div class="video__cleaner" (click)="onClick(i)">
                         <fa-icon [icon]="['fas', 'times']"></fa-icon>

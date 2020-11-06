@@ -6,4 +6,4 @@
         <div class="article__image"><img class="article__picture" src="{{ content.imageUrl }}"></div>
     </div>
 </div>
-<app-slider></app-slider>
+<app-slider (newPage)="setCurrentId($event)"></app-slider>

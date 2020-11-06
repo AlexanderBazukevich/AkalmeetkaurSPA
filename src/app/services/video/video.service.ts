@@ -5,55 +5,59 @@ import { Video } from 'src/app/interfaces';
   providedIn: 'root'
 })
 export class VideoService {
+
+  limit: number = 4;
   
   videos: Video[] = [
     {
-      id: 1,
+      id: 0,
       title: 'Приветствие',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'K9YVpXiXvag',
-      cover: 'http://www.you/preview.png',
-      purchase: false
+      link: 'y3-EJ-bqnlY',
+      cover: 'url(https://img.youtube.com/vi/y3-EJ-bqnlY/0.jpg)',
+      purchase: false,
+      promo: true,
+    },
+    {
+      id: 1,
+      title: 'Техники дыхания',
+      text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
+      link: 'zpSd6ptD2Nw',
+      cover: 'url(https://img.youtube.com/vi/zpSd6ptD2Nw/0.jpg)',
+      purchase: true,
+      promo: true,
     },
     {
       id: 2,
-      title: 'Женские практики',
+      title: 'Ноги направо голова налево',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'b_fKzTdMViQ',
-      cover: 'http://www.you/preview.png',
-      purchase: true
+      link: '0m2WVKXAgws',
+      cover: 'url(https://img.youtube.com/vi/0m2WVKXAgws/0.jpg)',
+      purchase: true,
+      promo: true,
     },
     {
       id: 3,
-      title: 'Избавление от гнева',
+      title: 'Женские практики',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'b_fKzTdMViQ',
-      cover: 'http://www.you/preview.png',
-      purchase: true,
-      
+      link: 'a8ucKz2Auak',
+      cover: 'url(https://img.youtube.com/vi/a8ucKz2Auak/0.jpg)',
+      purchase: false,
     },
     {
       id: 4,
-      title: 'Женские практики',
+      title: 'Собачка и другие асаны',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'b_fKzTdMViQ',
-      cover: 'http://www.you/preview.png',
+      link: 'WFnBIPUTYX8',
+      cover: 'url(https://img.youtube.com/vi/WFnBIPUTYX8/0.jpg)',
       purchase: false,
     },
     {
       id: 5,
-      title: 'Избавление от гнева',
+      title: 'Женские практики крупным планом',
       text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'b_fKzTdMViQ',
-      cover: 'http://www.you/preview.png',
-      purchase: false,
-    },
-    {
-      id: 6,
-      title: 'Избавление от гнева',
-      text: 'Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).',
-      link: 'b_fKzTdMViQ',
-      cover: 'http://www.you/preview.png',
+      link: 'fP_lLxo7V34',
+      cover: 'url(https://img.youtube.com/vi/fP_lLxo7V34/0.jpg)',
       purchase: false,
     }
   ];
@@ -66,17 +70,18 @@ export class VideoService {
      *  /api/v1/videos
      *  
      *  filter: {
+     *    page: number
      *    promo: true
      *  }
      */
-      
-    if (params) {
-      if (params.filter.promo) {
-        // return this.videos.filter(v => v.promo === true)
-        return [this.videos[0], this.videos[1], this.videos[2]]
-      }
-    } else {
-      return this.videos
+    if (params.filter.promo) {
+      return this.videos.filter( video => video.promo === true)
+    }
+
+    if (params.filter.page) {
+      return this.videos.filter( video => {
+        return video.id >= params.filter.page * this.limit && video.id < params.filter.page * this.limit + this.limit
+      });
     }
   }
 }

@@ -1,3 +1,5 @@
 <h1 class="main__title">Блог</h1>
-<app-blog></app-blog>
+<app-blog [currentPage]="page">
+    <app-slider (newPage)="setCurrentPage($event)"></app-slider>
+</app-blog>
 <app-sidebar></app-sidebar>
