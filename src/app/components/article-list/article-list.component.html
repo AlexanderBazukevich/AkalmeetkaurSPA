@@ -1,0 +1,8 @@
+<div class="article-list">
+    <div class="article-list__item" *ngFor="let article of articles">
+        <div class="article-list__image"><img class="article-list__picture" src="{{ article.imageUrl }}"></div>
+        <p class="article-list__date">{{ article.date }}</p>
+        <a class="article-list__title" [routerLink]="['article', article.id]">{{ article.title }}</a>
+    </div>
+    <app-pagination [pages]="pages"></app-pagination>
+</div>

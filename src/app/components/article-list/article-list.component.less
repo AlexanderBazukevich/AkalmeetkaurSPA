@@ -1,4 +1,4 @@
-.blog {
+.article-list {
     display: flex;
     flex-wrap: wrap;
 
@@ -32,21 +32,21 @@
     &__item {
         box-sizing: border-box;
     
-        &:nth-child(n + 2) > .blog__image {
+        &:nth-child(n + 2) > .article-list__image {
             //mobile - tablet
             @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
                 margin-top: 44px;
             }
         }
     
-        &:nth-child(n + 3) > .blog__image {
+        &:nth-child(n + 3) > .article-list__image {
             //tablet - desktop
             @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
                 margin-top: 45px;
             }
         }
     
-        &:nth-child(n + 4) > .blog__image {
+        &:nth-child(n + 4) > .article-list__image {
             //desktop - desktop_hd
             @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
                 margin-top: 42px;

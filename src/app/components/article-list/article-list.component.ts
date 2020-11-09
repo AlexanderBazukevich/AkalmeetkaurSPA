@@ -4,12 +4,12 @@ import { Article } from 'src/app/interfaces';
 import { ArticleService } from 'src/app/services/article/article.service';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
+  selector: 'app-article-list',
+  templateUrl: './article-list.component.html',
   styleUrls: []
 })
 
-export class BlogComponent implements OnInit {
+export class ArticleListComponent implements OnInit {
 
   articles: Article[];
   pages: number;

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VideoPageRoutingModule } from './video-page-routing.module';
 import { VideoPageComponent } from './video-page.component';
-import { SliderModule } from 'src/app/components/slider/slider.module';
+import { PaginationModule } from 'src/app/components/pagination/pagination.module';
 import { VideoModule } from 'src/app/components/video/video.module';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { VideoModule } from 'src/app/components/video/video.module';
   ],
   imports: [
     CommonModule,
-    SliderModule,
+    PaginationModule,
     VideoModule,
     VideoPageRoutingModule
   ],

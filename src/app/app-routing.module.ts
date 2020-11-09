@@ -30,7 +30,7 @@ const routes: Routes = [
         .then(m => m.LibraryPageModule)
   },
   {
-    path: 'blog',
+    path: 'article-list',
     data: {
       breadcrumb: 'Блог'
     },

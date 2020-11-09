@@ -4,7 +4,7 @@ import { BookComponent } from 'src/app/components/book/book.component';
 import { LibraryPageComponent } from './library-page.component';
 import { LibraryPageRoutingModule } from './library-page-routing.module';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
-import { SliderModule } from 'src/app/components/slider/slider.module';
+import { PaginationModule } from 'src/app/components/pagination/pagination.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { SliderModule } from 'src/app/components/slider/slider.module';
     CommonModule,
     LibraryPageRoutingModule,
     SidebarModule,
-    SliderModule
+    PaginationModule
   ]
 })
 export class LibraryPageModule { }

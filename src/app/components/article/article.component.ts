@@ -38,7 +38,7 @@ export class ArticleComponent implements OnInit {
 
   navigateTo(id: number) {
     this.article = this.service.getArticle(id).data;
-    this.router.navigate(['/blog/article', id]);//TODO
+    this.router.navigate(['/article-list/article', id]);//TODO
   }
 
   get articleText(): SafeHtml[] {

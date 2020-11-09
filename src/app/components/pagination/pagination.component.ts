@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
+  selector: 'app-pagination',
+  templateUrl: './pagination.component.html',
   styles: [`
     :host {
       display: contents;
@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   `]
 })
 
-export class SliderComponent implements OnInit {
+export class PaginationComponent implements OnInit {
 
   // pages length
   @Input() pages: number;
