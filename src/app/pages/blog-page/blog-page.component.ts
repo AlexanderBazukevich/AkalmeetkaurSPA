@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-blog-page',
@@ -7,14 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BlogPageComponent implements OnInit {
 
-  page: number = 0;
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  setCurrentPage(value: number) {
-    this.page = value;
   }
 }

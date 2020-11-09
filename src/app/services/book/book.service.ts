@@ -44,8 +44,12 @@ export class BookService {
   constructor() { }
 
   getBooks(page: number) {
-    return this.books.filter( book => {
-      return book.id >= page * this.limit && book.id < page * this.limit + this.limit
-    });
+    return {
+      data: this.books.filter( book => {
+        return book.id >= page * this.limit && book.id < page * this.limit + this.limit
+      }),
+      limit: this.limit,
+      count: this.books.length
+    }
   }
 }

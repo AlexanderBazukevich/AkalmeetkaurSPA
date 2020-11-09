@@ -75,13 +75,21 @@ export class VideoService {
      *  }
      */
     if (params.filter.promo) {
-      return this.videos.filter( video => video.promo === true)
+      return {
+        data: this.videos.filter( video => video.promo === true),
+        limit: this.limit,
+        count: this.videos.length
+      }
     }
 
-    if (params.filter.page) {
-      return this.videos.filter( video => {
-        return video.id >= params.filter.page * this.limit && video.id < params.filter.page * this.limit + this.limit
-      });
+    if (params.filter.page !== null || params.filter.page !== undefined) {
+      return {
+        data: this.videos.filter( video => {
+          return video.id >= params.filter.page * this.limit && video.id < params.filter.page * this.limit + this.limit
+        }),
+        limit: this.limit,
+        count: this.videos.length
+      }
     }
   }
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/interfaces';
 import { ArticleService } from 'src/app/services/article/article.service';
-import { SliderService } from 'src/app/services/slider/slider.service';
 
 @Component({
   selector: 'app-article',
@@ -14,21 +13,34 @@ export class ArticleComponent implements OnInit {
 
   article: Article;
   currentId: number;
-  maxId = this.service.articles.length;
+  pages: number;
 
-  constructor(private service: ArticleService, private sliderService: SliderService, private sanitizer: DomSanitizer, private route: ActivatedRoute) { }
+  constructor(private service: ArticleService, private sanitizer: DomSanitizer, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.sliderService.setLastPage(this.maxId);
-    const id = Number(this.route.snapshot.params.id);
-    this.article = this.service.getArticle(id);
+    this.currentId = Number(this.activeRoute.snapshot.params.id);
+    this.article = this.service.getArticle(this.currentId).data;
+    this.pages = this.service.getArticle(this.currentId).count;
   }
 
-  setCurrentId(value: number) {
-    this.currentId = value;
-    this.article = this.service.getArticle(this.currentId);
+  onNext() {
+    if (this.currentId < this.pages - 1) {
+      this.currentId++
+    }
+    this.navigateTo(this.currentId)
   }
-  
+  onPrev() {
+    if (this.currentId > 0) {
+      this.currentId--
+    }
+    this.navigateTo(this.currentId)
+  }
+
+  navigateTo(id: number) {
+    this.article = this.service.getArticle(id).data;
+    this.router.navigate(['/blog/article', id]);//TODO
+  }
+
   get articleText(): SafeHtml[] {
     return this.article.content.map( el => {
       return this.sanitizer.bypassSecurityTrustHtml(el.text)

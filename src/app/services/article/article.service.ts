@@ -188,12 +188,20 @@ export class ArticleService {
   constructor() { }
   
   getArticles(page: number) {
-    return this.articles.filter( article => {
-      return article.id >= page * this.limit && article.id < page * this.limit + this.limit
-    });
+    return {
+      data: this.articles.filter( article => {
+        return article.id >= page * this.limit && article.id < page * this.limit + this.limit
+      }),
+      limit: this.limit,
+      count: this.articles.length
+    }
   }
 
   getArticle(id: number) {
-    return this.articles[id];
+    return {
+      data: this.articles[id],
+      limit: this.limit,
+      count: this.articles.length
+    }
   }
 }

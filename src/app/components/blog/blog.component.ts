@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/interfaces';
 import { ArticleService } from 'src/app/services/article/article.service';
-import { SliderService } from 'src/app/services/slider/slider.service';
 
 @Component({
   selector: 'app-blog',
@@ -11,18 +11,16 @@ import { SliderService } from 'src/app/services/slider/slider.service';
 
 export class BlogComponent implements OnInit {
 
-  @Input() currentPage: number;
   articles: Article[];
-  maxPage = Math.ceil(this.service.articles.length / this.service.limit);
+  pages: number;
 
-  constructor(private service: ArticleService, private sliderService: SliderService) { }
+  constructor(private service: ArticleService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.sliderService.setLastPage(this.maxPage);
-    this.articles = this.service.getArticles(this.currentPage);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.articles = this.service.getArticles(this.currentPage);
+    this.activeRoute.queryParamMap.subscribe( paramsMap => {
+      const response = this.service.getArticles(Number(paramsMap.get('page')));
+      this.articles = response.data;
+      this.pages = Math.floor(response.count / response.limit);
+    })
   }
 }

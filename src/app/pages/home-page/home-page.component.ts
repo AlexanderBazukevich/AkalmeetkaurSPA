@@ -19,6 +19,6 @@ export class HomePageComponent implements OnInit {
     this.sections = this.sectionService.getSections()
     this.videos = this.videoService.getVideos({filter: {
       promo: true
-    }});
+    }}).data;
   }
 }

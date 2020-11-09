@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SliderModule } from '../slider/slider.module';
 import { ArticleComponent } from './article.component';
 import { ArticleRoutingModule } from './article-routing.module';
+import { faLongArrowAltRight, faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [ArticleComponent],
   imports: [
+    ArticleRoutingModule,
     CommonModule,
-    SliderModule,
-    ArticleRoutingModule
+    FontAwesomeModule
   ]
 })
-export class ArticleModule { }
+export class ArticleModule {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faLongArrowAltRight, faLongArrowAltLeft)
+  } 
+}

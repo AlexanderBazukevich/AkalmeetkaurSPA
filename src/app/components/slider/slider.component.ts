@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SliderService } from 'src/app/services/slider/slider.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-slider',
@@ -13,18 +13,30 @@ import { SliderService } from 'src/app/services/slider/slider.service';
 
 export class SliderComponent implements OnInit {
 
-  @Output() newPage = new EventEmitter<number>();
-  page: number = 0;
-  limit: number;
+  // pages length
+  @Input() pages: number;
+  // current page
+  page: number;
 
-  constructor(private service: SliderService) { }
+  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.limit = this.service.getLastPage() - 1;
+    this.activeRoute.queryParamMap
+    .subscribe( params => {
+      this.page = Number(params.get('page'));
+      this.router.navigate([], { queryParams: { page: this.page }});
+    })
   }
 
-  onClick(side: boolean) {
-    (side && this.page < this.limit) ? this.page++ : (!side && this.page > 0) ? this.page-- : this.page = this.page;
-    this.newPage.emit(this.page);
+  onNext() {
+    if (this.page < this.pages) {
+      this.router.navigate([], { queryParams: { page: ++this.page }})
+    }
+  }
+
+  onPrev() {
+    if (this.page > 0) {
+      this.router.navigate([], { queryParams: { page: --this.page }})
+    }
   }
 }

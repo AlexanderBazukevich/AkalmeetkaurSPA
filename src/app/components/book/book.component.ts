@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/interfaces';
 import { BookService } from 'src/app/services/book/book.service';
-import { SliderService } from 'src/app/services/slider/slider.service';
 
 @Component({
   selector: 'app-book',
@@ -10,18 +10,16 @@ import { SliderService } from 'src/app/services/slider/slider.service';
 })
 export class BookComponent implements OnInit {
 
-  @Input() currentPage: number;
   books: Book[];
-  maxPage = Math.ceil(this.service.books.length / this.service.limit);
+  pages: number;
 
-  constructor(private service: BookService,  private sliderService: SliderService) { }
+  constructor(private service: BookService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.sliderService.setLastPage(this.maxPage);
-    this.books = this.service.getBooks(this.currentPage);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.books = this.service.getBooks(this.currentPage);
+    this.activeRoute.queryParamMap.subscribe( paramsMap => {
+      const response = this.service.getBooks(Number(paramsMap.get('page')));
+      this.books = response.data;
+      this.pages = Math.floor(response.count / response.limit);
+    })
   }
 }
