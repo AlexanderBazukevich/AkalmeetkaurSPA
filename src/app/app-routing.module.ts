@@ -7,7 +7,7 @@ const routes: Routes = [
     data: {
       breadcrumb: 'О курсе'
     },
-    loadChildren: () => 
+    loadChildren: () =>
       import('./pages/home-page/home-page.module')
         .then(m => m.HomePageModule)
   },
@@ -16,7 +16,7 @@ const routes: Routes = [
     data: {
       breadcrumb: 'Видео'
     },
-    loadChildren: () => 
+    loadChildren: () =>
       import('./pages/video-page/video-page.module')
         .then(m => m.VideoPageModule)
   },

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Article } from 'src/app/interfaces';
 
 @Injectable({
@@ -203,5 +204,14 @@ export class ArticleService {
       limit: this.limit,
       count: this.articles.length
     }
+  }
+
+  // TODO: Try to use Observable insted of sync `getArticle`
+  getArticleObs(id: number): Observable<any> {
+    return of({
+      data: this.articles[id],
+      limit: this.limit,
+      count: this.articles.length
+    })
   }
 }
