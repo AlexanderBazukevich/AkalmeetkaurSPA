@@ -12,8 +12,8 @@ import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid
   ],
   exports: [PaginationComponent]
 })
-export class PaginationModule { 
+export class PaginationModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faLongArrowAltRight, faLongArrowAltLeft)
+    library.addIcons(faLongArrowAltRight, faLongArrowAltLeft);
   }
 }

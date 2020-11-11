@@ -16,9 +16,15 @@ export class HomePageComponent implements OnInit {
   constructor(private videoService: VideoService, private sectionService: SectionService) { }
 
   ngOnInit(): void {
-    this.sections = this.sectionService.getSections()
-    this.videos = this.videoService.getVideos({filter: {
+    this.sectionService.getSections()
+      .subscribe( sections => {
+        this.sections = sections;
+      });
+    this.videoService.getVideos({filter: {
       promo: true
-    }}).data;
+    }})
+      .subscribe( video => {
+        this.videos = video.data;
+      });
   }
 }

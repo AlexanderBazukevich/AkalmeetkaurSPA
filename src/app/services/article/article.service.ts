@@ -7,7 +7,7 @@ import { Article } from 'src/app/interfaces';
 })
 export class ArticleService {
 
-  limit: number = 6;
+  limit = 6;
 
   articles: Article[] = [
     {
@@ -184,34 +184,37 @@ export class ArticleService {
         }
       ]
     },
-  ]
+  ];
 
   constructor() { }
-  
-  getArticles(page: number) {
-    return {
-      data: this.articles.filter( article => {
-        return article.id >= page * this.limit && article.id < page * this.limit + this.limit
-      }),
-      limit: this.limit,
-      count: this.articles.length
-    }
+
+  getArticles(page: number): Observable<any> {
+    return of(
+      {
+        data: this.articles.filter( article => {
+          return article.id >= page * this.limit && article.id < page * this.limit + this.limit;
+        }),
+        limit: this.limit,
+        count: this.articles.length
+      }
+    );
   }
 
-  getArticle(id: number) {
-    return {
-      data: this.articles[id],
-      limit: this.limit,
-      count: this.articles.length
-    }
+  getArticle(id: number): Observable<any> {
+    return of(
+      {
+        data: this.articles[id],
+        limit: this.limit,
+        count: this.articles.length
+      }
+    );
   }
 
-  // TODO: Try to use Observable insted of sync `getArticle`
-  getArticleObs(id: number): Observable<any> {
-    return of({
-      data: this.articles[id],
-      limit: this.limit,
-      count: this.articles.length
-    })
+  getNextArticleId(id: number): number {
+    return id < this.articles.length - 1 ? ++id : id;
+  }
+
+  getPrevArticleId(id: number): number {
+    return id > 0 ? --id : id;
   }
 }

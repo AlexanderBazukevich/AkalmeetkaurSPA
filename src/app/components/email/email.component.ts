@@ -10,7 +10,7 @@ export class EmailComponent implements OnInit {
 
   email = new FormControl('', [
       Validators.email
-  ])
+  ]);
 
   constructor() { }
 

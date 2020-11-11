@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Video } from 'src/app/interfaces';
 
 @Injectable({
@@ -6,8 +7,8 @@ import { Video } from 'src/app/interfaces';
 })
 export class VideoService {
 
-  limit: number = 4;
-  
+  limit = 4;
+
   videos: Video[] = [
     {
       id: 0,
@@ -64,32 +65,36 @@ export class VideoService {
 
   constructor() { }
 
-  getVideos(params?: any) {
+  getVideos(params?: any): Observable<any> {
     /**
      *  GET
      *  /api/v1/videos
-     *  
+     *
      *  filter: {
      *    page: number
      *    promo: true
      *  }
      */
     if (params.filter.promo) {
-      return {
-        data: this.videos.filter( video => video.promo === true),
-        limit: this.limit,
-        count: this.videos.length
-      }
+      return of(
+        {
+          data: this.videos.filter( video => video.promo === true),
+          limit: this.limit,
+          count: this.videos.length
+        }
+      );
     }
 
     if (params.filter.page !== null || params.filter.page !== undefined) {
-      return {
-        data: this.videos.filter( video => {
-          return video.id >= params.filter.page * this.limit && video.id < params.filter.page * this.limit + this.limit
-        }),
-        limit: this.limit,
-        count: this.videos.length
-      }
+      return of(
+        {
+          data: this.videos.filter( video => {
+            return video.id >= params.filter.page * this.limit && video.id < params.filter.page * this.limit + this.limit;
+          }),
+          limit: this.limit,
+          count: this.videos.length
+        }
+      );
     }
   }
 }

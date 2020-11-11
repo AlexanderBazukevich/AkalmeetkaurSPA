@@ -1,7 +1,12 @@
 <div class="header">
     <div class="header__content">
-        <app-logo [location]="current"></app-logo> 
-        <!-- TODO -->
+        <a class="logo" routerLink="/home">
+            <img class="logo__image" src="./assets/images/logo_flower.svg">
+            <div class="logo__text">
+                <span class="logo__text logo__text_big logo__text_black">akalmeetkaur</span>
+                <span class="logo__text logo__text_small_gray">online</span>
+            </div>
+        </a>
         <app-menu [location]="current"></app-menu>
         <app-social [location]="current"></app-social>
         <app-burger></app-burger>

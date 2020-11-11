@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,11 @@ export class AsideService {
     this.isAsideVisible = new BehaviorSubject<boolean>(true);
   }
 
-  getAsideVisibility() {
+  getAsideVisibility(): Observable<boolean> {
     return this.isAsideVisible.asObservable();
   }
 
-  setAsideVisibility(value: boolean) {
+  setAsideVisibility(value: boolean): void {
     this.isAsideVisible.next(value);
   }
 }

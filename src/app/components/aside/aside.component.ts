@@ -8,7 +8,7 @@ import { AsideService } from 'src/app/services/aside/aside.service';
 })
 export class AsideComponent implements OnInit {
 
-  current = "aside";
+  current = 'aside';
   asideVisible: boolean;
 
   constructor(private service: AsideService) {
@@ -17,12 +17,12 @@ export class AsideComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAsideVisibility().subscribe( value => {
       this.asideVisible = value;
-    })
+    });
   }
-  
-  onClick(event) {
+
+  onClick(event: any): void {
     event.preventDefault();
-    this.service.getAsideVisibility().subscribe( value => this.asideVisible = value)
+    this.service.getAsideVisibility().subscribe( value => this.asideVisible = value);
     this.service.setAsideVisibility(!this.asideVisible);
   }
 }

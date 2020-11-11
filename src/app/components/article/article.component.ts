@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Article } from 'src/app/interfaces';
 import { ArticleService } from 'src/app/services/article/article.service';
 
@@ -13,40 +15,31 @@ export class ArticleComponent implements OnInit {
 
   article: Article;
   currentId: number;
-  prevId = 2;
-  nextId = 2;
+  prevId: number;
+  nextId: number;
   pages: number;
 
-  constructor(private service: ArticleService, private sanitizer: DomSanitizer, private activeRoute: ActivatedRoute, private router: Router) { }
+  constructor(
+    private service: ArticleService,
+    private sanitizer: DomSanitizer,
+    private activeRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.currentId = Number(this.activeRoute.snapshot.params.id);
-    // this.nextId = this.service.getNextAricleId(this.currentId);
-    // this.prevId = this.service.getPrevAricleId(this.currentId);
-    this.article = this.service.getArticle(this.currentId).data;
-    this.pages = this.service.getArticle(this.currentId).count;
+    this.activeRoute.params.subscribe( params => {
+      this.currentId = Number(params.id);
+      this.nextId = this.service.getNextArticleId(this.currentId);
+      this.prevId = this.service.getPrevArticleId(this.currentId);
+      this.service.getArticle(this.currentId).subscribe( article => {
+        this.article = article.data;
+        this.pages = article.count;
+      });
+    });
   }
-
-  // onNext() {
-  //   // const id = this.service.getNextAricleId(this.currentId);
-  //   this.navigateTo(2)
-  // }
-
-  // onPrev() {
-  //   if (this.currentId > 0) {
-  //     this.currentId--
-  //   }
-  //   this.navigateTo(this.currentId)
-  // }
-
-  // navigateTo(id: number) {
-  //   this.article = this.service.getArticle(id).data;
-  //   this.router.navigate(['/article-list/article', id]);
-  // }
 
   get articleText(): SafeHtml[] {
     return this.article.content.map( el => {
-      return this.sanitizer.bypassSecurityTrustHtml(el.text)
-    })
+      return this.sanitizer.bypassSecurityTrustHtml(el.text);
+    });
   }
 }

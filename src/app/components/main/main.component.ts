@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   constructor(private service: AsideService) { }
 
   ngOnInit(): void {
-    this.service.getAsideVisibility().subscribe( value => this.showOverlay = value)
+    this.service.getAsideVisibility().subscribe( value => this.showOverlay = value);
     this.service.setAsideVisibility(!this.showOverlay);
   }
 }

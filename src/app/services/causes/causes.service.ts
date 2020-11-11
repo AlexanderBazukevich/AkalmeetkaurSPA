@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Cause } from 'src/app/interfaces';
 
 @Injectable({
@@ -41,7 +42,7 @@ export class CausesService {
 
   constructor() { }
 
-  getCauses() {
-    return this.causes;
+  getCauses(): Observable<Cause[]> {
+    return of(this.causes);
   }
 }

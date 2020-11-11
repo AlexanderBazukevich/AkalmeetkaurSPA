@@ -14,6 +14,6 @@ export class SectionComponent {
   constructor(private sanitizer: DomSanitizer) { }
 
   get sectionText(): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(this.sectionData.text)
+    return this.sanitizer.bypassSecurityTrustHtml(this.sectionData.text);
   }
 }

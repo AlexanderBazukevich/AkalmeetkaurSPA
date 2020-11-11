@@ -15,9 +15,9 @@ export class BurgerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(event) {
+  onClick(event: any): void {
     event.preventDefault();
-    this.service.getAsideVisibility().subscribe( value => this.asideVisible = value)
+    this.service.getAsideVisibility().subscribe( value => this.asideVisible = value);
     this.service.setAsideVisibility(!this.asideVisible);
   }
 }

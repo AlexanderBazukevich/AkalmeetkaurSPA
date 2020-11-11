@@ -18,11 +18,13 @@ export class VideoPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeRoute.queryParamMap.subscribe( paramsMap => {
-      const response = this.service.getVideos({ filter: {
+      this.service.getVideos({ filter: {
         page: Number(paramsMap.get('page'))
-      }});
-      this.videos = response.data;
-      this.pages = Math.floor(response.count / response.limit);
-    })
+      }})
+        .subscribe( video => {
+          this.videos = video.data;
+          this.pages = Math.floor(video.count / video.limit);
+      });
+    });
   }
 }

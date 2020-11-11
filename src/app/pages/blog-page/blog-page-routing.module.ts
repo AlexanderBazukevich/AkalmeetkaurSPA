@@ -16,7 +16,7 @@ const routes: Routes = [
       import('src/app/components/article/article.module')
         .then(m => m.ArticleModule)
   }
-]
+];
 
 @NgModule({
   declarations: [],

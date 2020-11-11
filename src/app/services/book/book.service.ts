@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Book } from 'src/app/interfaces';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { Book } from 'src/app/interfaces';
 })
 export class BookService {
 
-  limit: number = 4;
+  limit = 4;
 
   books: Book[] = [
     {
@@ -39,17 +40,19 @@ export class BookService {
       text: 'Ночные тусоки, которые предлагает осуществлять автор этой книги, помогли десяткам тысяч людей изменить свою жизнь, почувствовать себя лучше и успевать больше. Из книги вы узнаете, как сделать чтобы первый час дня после ночной тусы не стал последним.',
       imageUrl: './assets/images/book.png'
     },
-  ]
+  ];
 
   constructor() { }
 
-  getBooks(page: number) {
-    return {
-      data: this.books.filter( book => {
-        return book.id >= page * this.limit && book.id < page * this.limit + this.limit
-      }),
-      limit: this.limit,
-      count: this.books.length
-    }
+  getBooks(page: number): Observable<any> {
+    return of(
+      {
+        data: this.books.filter( book => {
+          return book.id >= page * this.limit && book.id < page * this.limit + this.limit;
+        }),
+        limit: this.limit,
+        count: this.books.length
+      }
+    );
   }
 }

@@ -14,6 +14,10 @@ export class CausesComponent implements OnInit {
   constructor(private service: CausesService) { }
 
   ngOnInit(): void {
-    this.causes = this.service.getCauses();
+    this.service.getCauses()
+      .subscribe( causes => {
+        this.causes = causes;
+      }
+    );
   }
 }

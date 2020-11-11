@@ -17,9 +17,11 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeRoute.queryParamMap.subscribe( paramsMap => {
-      const response = this.service.getBooks(Number(paramsMap.get('page')));
-      this.books = response.data;
-      this.pages = Math.floor(response.count / response.limit);
-    })
+      this.service.getBooks(Number(paramsMap.get('page')))
+        .subscribe( books => {
+          this.books = books.data;
+          this.pages = Math.floor(books.count / books.limit);
+        });
+    });
   }
 }

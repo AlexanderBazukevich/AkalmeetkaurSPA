@@ -18,9 +18,10 @@ export class ArticleListComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeRoute.queryParamMap.subscribe( paramsMap => {
-      const response = this.service.getArticles(Number(paramsMap.get('page')));
-      this.articles = response.data;
-      this.pages = Math.floor(response.count / response.limit);
-    })
+      this.service.getArticles(Number(paramsMap.get('page'))).subscribe( articles => {
+        this.articles = articles.data;
+        this.pages = Math.floor(articles.count / articles.limit);
+      });
+    });
   }
 }

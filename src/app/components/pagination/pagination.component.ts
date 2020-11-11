@@ -25,18 +25,18 @@ export class PaginationComponent implements OnInit {
     .subscribe( params => {
       this.page = Number(params.get('page'));
       this.router.navigate([], { queryParams: { page: this.page }});
-    })
+    });
   }
 
-  onNext() {
+  onNext(): void {
     if (this.page < this.pages) {
-      this.router.navigate([], { queryParams: { page: ++this.page }})
+      this.router.navigate([], { queryParams: { page: ++this.page }});
     }
   }
 
-  onPrev() {
+  onPrev(): void {
     if (this.page > 0) {
-      this.router.navigate([], { queryParams: { page: --this.page }})
+      this.router.navigate([], { queryParams: { page: --this.page }});
     }
   }
 }

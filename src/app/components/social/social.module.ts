@@ -14,6 +14,6 @@ import { faFacebookF, faInstagram, faYoutube } from '@fortawesome/free-brands-sv
 })
 export class SocialModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faFacebookF, faYoutube, faInstagram)
+    library.addIcons(faFacebookF, faYoutube, faInstagram);
   }
 }

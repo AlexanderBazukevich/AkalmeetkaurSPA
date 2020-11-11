@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Section } from 'src/app/interfaces';
 
 @Injectable({
@@ -27,11 +28,11 @@ export class SectionService {
       <p>Курс состоит из 7 видео уроков и полезных материалов, среди которых 2 фундаментальные последовательности Кундалини йоги для последующей регулярных самостоятельной практики.</p>
       `
     },
-  ]
+  ];
 
   constructor() { }
 
-  getSections() {
-    return this.sections;
+  getSections(): Observable<Section[]> {
+    return of(this.sections);
   }
 }

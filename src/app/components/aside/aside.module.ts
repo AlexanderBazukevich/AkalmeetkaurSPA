@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoModule } from '../logo/logo.module';
 import { AsideComponent } from './aside.component';
 import { RouterModule } from '@angular/router';
 import { MenuModule } from '../menu/menu.module';
@@ -15,7 +14,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
     CommonModule,
     CopyrightModule,
     FontAwesomeModule,
-    LogoModule,
     MenuModule,
     RouterModule,
     SocialModule

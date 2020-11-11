@@ -15,6 +15,6 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 })
 export class ArticleModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faLongArrowAltRight, faLongArrowAltLeft)
-  } 
+    library.addIcons(faLongArrowAltRight, faLongArrowAltLeft);
+  }
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoModule } from '../logo/logo.module';
 import { FooterComponent } from './footer.component';
 import { CopyrightModule } from '../copyright/copyright.module';
 
@@ -10,8 +9,7 @@ import { CopyrightModule } from '../copyright/copyright.module';
   ],
   imports: [
     CommonModule,
-    CopyrightModule,
-    LogoModule
+    CopyrightModule
   ],
   exports: [FooterComponent]
 })
