@@ -1,4 +1,6 @@
 .social {
+    display: flex;
+    justify-content: space-between;
 
     &__link {
         display: block;
@@ -13,14 +15,9 @@
             color: @active-color;
         }
 
-        //mobile - desktop
-        @media screen and (max-width: @sizes[desktop]) {
-            
-        }
         //desktop +
         @media screen and (min-width: @sizes[desktop]) {
             margin: 0 0 0 24px;
         }
-
     }
 }

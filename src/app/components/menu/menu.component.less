@@ -1,4 +1,19 @@
 .menu {
+
+    //mobile - tablet
+    @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+        margin: 0 0 auto 53px;
+    }
+    //tablet +
+    @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+        margin: 0 0 auto 0;
+    }
+    //desktop +
+    @media screen and (min-width: @sizes[desktop]) {
+        margin: 0 6px 0 auto;
+        padding: 0 19px;
+    }
+
     &__item {
         color: @text-color;
         font-family: "PT Sans Caption";

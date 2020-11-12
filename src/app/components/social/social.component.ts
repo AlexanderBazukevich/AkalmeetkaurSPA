@@ -11,13 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SocialComponent implements OnInit {
 
-  @Input() location: string;
-  header: boolean;
-  aside: boolean;
-
   constructor() { }
 
-  ngOnInit(): void {
-    this.location === 'header' ? this.header = true : this.aside = true;
-  }
+  ngOnInit(): void {}
 }

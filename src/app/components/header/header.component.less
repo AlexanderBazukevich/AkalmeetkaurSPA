@@ -25,31 +25,16 @@
             padding: 0 40px;
         }
     }
-
-    &__menu {
-        border-right: 1px solid #e4e4e4;
-
+//TODO question
+    .menu {
         //mobile - desktop
         @media screen and (max-width: @sizes[desktop] - 1) {
             display: none;
         }
-        //desktop - desktop_hd
-        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
-            margin: 3px 6px 0 auto;
-            padding: 0 19px;
-        }
-        //desktop_hd+
-        @media screen and (min-width: @sizes[desktop_hd]) {
-            margin: 3px 5px 0 auto;
-            padding: 0 18px;
-        }
     }
 
-    &__social {
-        display: flex;
-        margin: 9px 0 0 0;
-
-        //desktop +
+    .social {
+        //desktop -
         @media screen and (max-width: @sizes[desktop] - 1) {
             display: none;
         }

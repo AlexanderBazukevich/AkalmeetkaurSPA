@@ -8,7 +8,6 @@ import { AsideService } from 'src/app/services/aside/aside.service';
 })
 export class AsideComponent implements OnInit {
 
-  current = 'aside';
   asideVisible: boolean;
 
   constructor(private service: AsideService) {

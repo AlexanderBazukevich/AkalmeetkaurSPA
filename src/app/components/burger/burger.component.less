@@ -1,4 +1,5 @@
 .burger {
+    cursor: pointer;
     position: absolute;
     right: 0;
     top: 0;
@@ -26,13 +27,14 @@
         color: @text-color;
         box-sizing: border-box;
 
+        //mobile - tablet -1
         @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
-            padding: 10px 0 0 15px;
+            padding: 13px 0 0 14px;
             font-size: 1.5em;
         }
-
+        //tablet +
         @media screen and (min-width: @sizes[tablet]) {
-            padding: 15px 0 0 20px;
+            padding: 14px 0 0 20px;
             font-size: 2em;
         }
     }
