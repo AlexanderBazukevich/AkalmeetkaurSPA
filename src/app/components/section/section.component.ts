@@ -5,7 +5,13 @@ import { Section } from 'src/app/interfaces';
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
-  styleUrls: []
+  styles: [`
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      :host-context(.hide-image) .section__image {
+        display: none;
+      }
+    }
+  `]
 })
 export class SectionComponent {
 
