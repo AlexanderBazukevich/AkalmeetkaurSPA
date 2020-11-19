@@ -1,5 +1,5 @@
 <div class="main">
-    <h1 class="main__title">{{ title }}</h1>
+    <app-breadcrumb></app-breadcrumb>
     <router-outlet></router-outlet>
-    <div class="main__overlay"></div>
+    <div class="main__overlay" [class.main__overlay_show]="showOverlay"></div>
 </div>

@@ -1,12 +1,12 @@
 .burger {
+    cursor: pointer;
     position: absolute;
     right: 0;
     top: 0;
     background-color: #F9F9F9;
-    background-image: url(/src/assets/interface/ic_menu_burger.svg);
     background-position: center center;
     background-repeat: no-repeat;
-
+    
     //mobile - tablet -1
     @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
         width: 49px;
@@ -17,5 +17,27 @@
     @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
         width: 62px;
         height: 62px;
+    }
+
+    //desktop +
+    @media screen and (min-width: @sizes[desktop]) {
+        display: none;
+    }
+
+    &:first-child {
+        color: @text-color;
+        box-sizing: border-box;
+
+        //mobile - tablet -1
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            padding: 13px 0 0 14px;
+            font-size: 1.5em;
+        }
+
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            padding: 14px 0 0 20px;
+            font-size: 2em;
+        }
     }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-
+import { AsideService } from 'src/app/services/aside/aside.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -8,13 +7,12 @@ import { DataService } from 'src/app/data.service';
 })
 export class MainComponent implements OnInit {
 
-  title: string;
+  showOverlay: boolean;
 
-  constructor(private service: DataService) { }
+  constructor(private service: AsideService) { }
 
   ngOnInit(): void {
-    this.service.getPageTitle().subscribe( value => {
-      this.title = value;
-    });
+    this.service.getAsideVisibility().subscribe( value => this.showOverlay = value);
+    this.service.setAsideVisibility(!this.showOverlay);
   }
 }

@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Section } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
-  styleUrls: []
+  styles: [`
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      :host-context(.hide-image) .section__image {
+        display: none;
+      }
+    }
+  `]
 })
-export class SectionComponent implements OnInit {
+export class SectionComponent {
 
-  constructor() { }
+  @Input() sectionData: Section;
 
-  ngOnInit(): void {
+  constructor(private sanitizer: DomSanitizer) { }
+
+  get sectionText(): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(this.sectionData.text);
   }
-
 }

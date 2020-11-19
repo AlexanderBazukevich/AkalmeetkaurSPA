@@ -4,27 +4,39 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => 
-      import('./components/home/home.module')
-        .then(m => m.HomeModule)
+    data: {
+      breadcrumb: 'О курсе'
+    },
+    loadChildren: () =>
+      import('./pages/home-page/home-page.module')
+        .then(m => m.HomePageModule)
   },
   {
     path: 'videos',
-    loadChildren: () => 
-      import('./components/videos/videos.module')
-        .then(m => m.VideosModule)
+    data: {
+      breadcrumb: 'Видео'
+    },
+    loadChildren: () =>
+      import('./pages/video-page/video-page.module')
+        .then(m => m.VideoPageModule)
   },
   {
     path: 'library',
+    data: {
+      breadcrumb: 'Библиотека'
+    },
     loadChildren: () =>
-      import('./components/library/library.module')
-        .then(m => m.LibraryModule)
+      import('./pages/library-page/library-page.module')
+        .then(m => m.LibraryPageModule)
   },
   {
-    path: 'blog',
+    path: 'article-list',
+    data: {
+      breadcrumb: 'Блог'
+    },
     loadChildren: () =>
-      import('./components/blog/blog.module')
-        .then(m => m.BlogModule)
+      import('./pages/blog-page/blog-page.module')
+        .then(m => m.BlogPageModule)
   }
 ];
 

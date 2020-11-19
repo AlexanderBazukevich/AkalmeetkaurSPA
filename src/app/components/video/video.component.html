@@ -1,4 +1,23 @@
-<i class="video__overlay"></i>
-<h1 class="video__title">Женские практики</h1>
-<p class="video__text">Начала заниматься йогой с 2010 года у Дарьи Прудниковой (Кундалини, Хатха, Аштанга).</p>
-<a class="button button_light video__button" href="#">Смотреть видео</a>
+<div class="video">
+    <ng-content></ng-content>
+
+    <ng-container *ngFor="let video of videos; let i = index">
+        <div class="video__item" [style.backgroundImage]="videoCover[i]">
+            <i class="video__overlay"></i>
+            <h1 class="video__title">{{ video.title }}</h1>
+            <p class="video__text">{{ video.text }}</p>
+            <a class="button button_blue video__button" *ngIf="video.purchase; else watchBlock">Купить видео</a>
+            <ng-template #watchBlock>
+                <a class="button button_light video__button" (click)="onClick(i)">Смотреть видео</a>
+            </ng-template>
+            <ng-container *ngIf="!video.purchase">
+                <div class="video__popup" [class.video__popup_hidden]="hiddenVideos[i]">
+                    <youtube-player class="video__player" [videoId]="videosId[i]"></youtube-player>
+                    <div class="video__cleaner" (click)="onClick(i)">
+                        <fa-icon [icon]="['fas', 'times']"></fa-icon>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>

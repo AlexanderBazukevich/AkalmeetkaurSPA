@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoComponent } from '../logo/logo.component';
 import { HeaderComponent } from './header.component';
-import { MenuComponent } from '../menu/menu.component';
-import { SocialComponent } from '../social/social.component';
 import { RouterModule } from '@angular/router';
+import { MenuModule } from '../menu/menu.module';
+import { SocialModule } from '../social/social.module';
+import { BurgerModule } from '../burger/burger.module';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    LogoComponent,
-    MenuComponent,
-    SocialComponent
+    HeaderComponent
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [
+    BurgerModule,
+    CommonModule,
+    MenuModule,
+    RouterModule,
+    SocialModule
+  ],
   exports: [HeaderComponent]
 })
 export class HeaderModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-email',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class EmailComponent implements OnInit {
+
+  email = new FormControl('', [
+      Validators.email
+  ]);
 
   constructor() { }
 

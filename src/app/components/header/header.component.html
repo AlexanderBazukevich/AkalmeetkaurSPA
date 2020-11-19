@@ -1,5 +1,14 @@
-<div class="header__content">
-    <app-logo></app-logo>
-    <app-menu class="menu header__menu"></app-menu>
-    <app-social class="social header__social"></app-social>
+<div class="header">
+    <div class="header__content">
+        <a class="logo" routerLink="/home">
+            <img class="logo__image" src="./assets/images/logo_flower.svg">
+            <div class="logo__text">
+                <span class="logo__text logo__text_big logo__text_black">akalmeetkaur</span>
+                <span class="logo__text logo__text_small_gray">online</span>
+            </div>
+        </a>
+        <app-menu></app-menu>
+        <app-social></app-social>
+        <app-burger></app-burger>
+    </div>
 </div>

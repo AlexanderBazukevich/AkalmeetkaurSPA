@@ -1,0 +1,165 @@
+.causes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    counter-reset: cellcount;
+
+    //mobile - decktop_hd
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
+        padding: 30px 0;
+    }
+
+    //desktop_hd+
+    @media screen and (min-width: @sizes[desktop_hd]) {
+        padding: 50px 0;
+    }
+
+    &__item {
+        counter-increment: topiccount;
+    
+        //desktop +
+        @media screen and (min-width: @sizes[desktop]) {
+            max-width: calc((100% - 40px) / 3);
+        }
+    
+        &:nth-child(n + 5) {
+    
+            //desktop - desktop_hd
+            @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+                margin-top: 82px;
+            }
+            //desktop_hd +
+            @media screen and (min-width: @sizes[desktop_hd] - 1) {
+                margin-top: 120px;
+            }
+        }
+    
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            max-width: calc((100% - 20px) / 2);
+    
+            &:nth-child(n + 4) {
+                margin-top: 80px;
+            }
+            &:nth-child(n + 6) {
+                margin-top: 93px;
+            }
+        }
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            max-width: 100%;
+    
+            &:nth-child(n + 3) {
+                margin-top: 44px;
+            }
+            &:nth-child(n + 5) {
+                margin-top: 39px;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        height: 2.5em;
+        margin: 0 0 10px 0;
+        color: @text-color;
+        font-family: "PT Sans Caption";
+        font-size: 18px;
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+              padding-right: 20%;
+        }
+        //tablet +
+        @media screen and (min-width: @sizes[tablet]) {
+            padding-right: 30%;
+        }
+
+            &:after {
+                position: absolute;
+                right: 0;
+                content: counter(topiccount);
+                color: #E9E9E9;
+                font-family: "Didact Gothic";
+                font-weight: bold;
+                line-height: 0.9;
+                z-index: -1;
+
+                //mobile - tablet
+                @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+                    font-size: 78px;
+                    bottom: -3px;
+                }
+                //tablet +
+                @media screen and (min-width: @sizes[tablet]) {
+                    font-size: 118px;
+                    bottom: -4px;
+                }
+            }
+    }
+
+    &__text {
+        margin: 0;
+        color: @text-color;
+        font-family: "Didact Gothic";
+        font-size: 16px;
+    }
+    
+    &__wrapper {
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        color: #363B3C;
+        font-family: "PT Sans Caption";
+
+        //mobile - tablet
+        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            margin: 0 0 34px 0;
+            font-size: 20px;
+            letter-spacing: 0.31px;
+        }
+        //tablet - desktop
+        @media screen and (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            margin: 0 0 78px 0;
+            font-size: 24px;
+            letter-spacing: 0.37px;
+        }
+        //desktop - desktop_hd
+        @media screen and (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            margin: -6px 0 76px 0;
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+        //desktop_hd +
+        @media screen and (min-width: @sizes[desktop_hd] - 1) {
+            margin: -1px 0 73px 0;
+            font-size: 26px;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    &__header {
+        position: relative;
+
+        &:before,
+        &:after {
+            position: absolute;
+            top: 50%;
+            content: "";
+            display: block;
+            height: 1px;
+            width: 1000px;
+            background-color: @accent-color-odd;
+        }
+
+        &:before {
+            left: 105%;
+        }
+
+        &:after {
+            right: 105%;
+        }
+    }
+}

@@ -10,6 +10,6 @@ export class CopyrightComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

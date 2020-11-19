@@ -1,0 +1,18 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+
+    &__arrow {
+        cursor: pointer;
+        text-decoration: none;
+        color: @text-color;
+        font-size: 15px;
+        font-family: "PT Sans Caption";
+        letter-spacing: 0.3px;
+
+        // mixin
+        .link_menu();
+    }
+}

@@ -5,8 +5,7 @@
 
     //mobile - tablet
     @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
-        // margin: auto 0;
-        
+
         &__overlay {
             position: fixed;
             top: 0;
@@ -21,10 +20,35 @@
             &_show {
                 opacity: .5;
                 background-color: gray;
-                z-index: 100;
+                z-index: 0;
             }
         }
     }
+
+    @media screen {
+
+        //mobile - tablet
+        @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
+            max-width: 768px - 40px;
+            padding: 23px 20px;
+        }
+        //tablet - desktop
+        @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
+            max-width: 1024px - 80px;
+            padding: 20px 20px 50px;
+        }
+        //desktop - desktop_hd
+        @media (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
+            max-width: 1440px - 260px;
+            padding: 31px 42px 50px;
+        }
+        //desktop_hd +
+        @media  (min-width: @sizes[desktop_hd]) {
+            max-width: 1440px - 260px;
+            padding: 50px 0 61px;
+        }
+    }
+
 
     &__title {
         color: #363B3C;
@@ -53,30 +77,6 @@
             margin: 2px 0px 28px -2px;
             font-size: 26px;
             letter-spacing: 0.4px;
-        }
-    }
-
-    @media screen {
-
-        //mobile - tablet
-        @media (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
-            max-width: 768px - 40px;
-            padding: 23px 20px;
-        }
-        //tablet - desktop
-        @media (min-width: @sizes[tablet]) and (max-width: @sizes[desktop] - 1) {
-            max-width: 1024px - 80px;
-            padding: 20px 20px 50px;
-        }
-        //desktop - desktop_hd
-        @media (min-width: @sizes[desktop]) and (max-width: @sizes[desktop_hd] - 1) {
-            max-width: 1440px - 260px;
-            padding: 31px 42px 50px;
-        }
-        //desktop_hd +
-        @media  (min-width: @sizes[desktop_hd]) {
-            max-width: 1440px - 260px;
-            padding: 50px 0 61px;
         }
     }
 }

@@ -6,16 +6,15 @@
     @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[tablet] - 1) {
         flex-direction: column;
         align-items: center;
-        padding-top: 19px;
-
-        &:nth-child(n+3) {
-            .section__image {
-                display: none;
-            }
-        }
     }
-    //tablet +
-    @media screen and (min-width: @sizes[tablet]) {
+
+    //mobile - decktop_hd
+    @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
+        padding-top: 30px;
+    }
+
+    //desktop_hd+
+    @media screen and (min-width: @sizes[desktop_hd]) {
         padding-top: 50px;
     }
 
@@ -144,18 +143,6 @@
             @media screen and (min-width: @sizes[desktop_hd]) {
                 margin: 0 0 26px 0;
             }
-        }
-    }
-
-    &__purchase {
-
-        //mobile - desktop_hd
-        @media screen and (min-width: @sizes[mobile]) and (max-width: @sizes[desktop_hd] - 1) {
-            margin: 0;
-        }
-        //desktop_hd +
-        @media screen and (min-width: @sizes[desktop_hd]) {
-            margin-right: 95px;
         }
     }
 }

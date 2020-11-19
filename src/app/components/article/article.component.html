@@ -1,1 +1,12 @@
-<p>article works!</p>
+<div class="article">
+    <div class="article__image"><img class="article__picture article__picture_top" src="{{ article.imageUrl }}"></div>
+    <h1 class="article__title">{{ article.title }}</h1>
+    <div class="article__content" *ngFor="let content of article.content; let i = index">
+        <div class="article__text" [innerHTML]="articleText[i]"></div>
+        <div class="article__image"><img class="article__picture" src="{{ content.imageUrl }}"></div>
+    </div>
+</div>
+<div class="pagination">
+    <a class="pagination__arrow" [routerLink]="['../../', prevId]"><fa-icon [icon]="['fas', 'long-arrow-alt-left']"></fa-icon> Назад</a>
+    <a class="pagination__arrow" [routerLink]="['../../', nextId]">Вперёд <fa-icon [icon]="['fas', 'long-arrow-alt-right']"></fa-icon></a>
+</div>

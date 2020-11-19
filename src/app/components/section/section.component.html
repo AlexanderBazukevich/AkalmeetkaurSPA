@@ -1,1 +1,17 @@
-<p>section works!</p>
+<div class="section">
+    <div class="section__image">
+        <picture class="section__picture">
+            <source media="(max-width: 767px)" srcset="assets/images/{{ sectionData.imageFileName }}_280w.jpg">
+            <source media="(max-width: 1023px)" srcset="assets/images/{{ sectionData.imageFileName }}_356w.jpg">
+            <source media="(max-width: 1439px)" srcset="assets/images/{{ sectionData.imageFileName }}_460w.jpg">
+            <source media="(min-width: 1440px)" srcset="assets/images/{{ sectionData.imageFileName }}_580w.jpg">
+            <img src="assets/images/{{ sectionData.imageFileName }}_580w.jpg">
+        </picture>
+    </div>
+    <div class="section__content">
+        <h1 class="section__title">{{ sectionData.title }}</h1>
+        <p class="section__text section__text_gray">{{ sectionData.subtitle }}</p>
+        <div class="section__text" [innerHTML]="sectionText"></div>
+        <ng-content></ng-content>
+    </div>
+</div>

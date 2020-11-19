@@ -1,1 +1,8 @@
-<p>book works!</p>
+<div class="book">
+    <div class="book__item" *ngFor="let book of books">
+        <div class="book__image"><img class="book__picture" src="{{ book.imageUrl }}"></div>
+        <a class="book__title">{{ book.title }}</a>
+        <p class="book__text">{{ book.text }}</p>
+    </div>
+    <app-pagination [pages]="pages"></app-pagination>
+</div>

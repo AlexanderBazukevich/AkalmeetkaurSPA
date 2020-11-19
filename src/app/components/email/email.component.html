@@ -1,1 +1,13 @@
-<p>email works!</p>
+<div class="email">
+    <input 
+        class="email__input"
+        type="email"
+        [formControl]="email"
+        [class.email__input_invalid] = "email.invalid && email.touched"
+        [class.email__input_valid] = "email.valid"
+        placeholder="Введите ваш email">
+    <p class="email__text email__text_invalid" *ngIf="email.invalid && email.touched; else validEmail">Пожалуйста введите правильный email</p>
+    <ng-template #validEmail>
+        <p class="email__text email__text_valid">На этот email будут высланы инструкции</p>
+    </ng-template>
+</div>
