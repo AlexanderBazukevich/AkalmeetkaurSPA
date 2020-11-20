@@ -12,7 +12,7 @@ export class ArticleService {
   articles: Article[] = [
     {
       id: 0,
-      imageUrl: './assets/images/photo_1.png',
+      imageUrl: '/assets/images/photo_1.png',
       title: 'Что такое Шакти-данс?',
       date: '04.03.2019',
       content: [
@@ -23,7 +23,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
@@ -37,7 +37,7 @@ export class ArticleService {
     },
     {
       id: 1,
-      imageUrl: './assets/images/photo_1.png',
+      imageUrl: '/assets/images/photo_1.png',
       title: 'Гнев',
       date: '06.03.2019',
       content: [
@@ -48,7 +48,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
@@ -62,7 +62,7 @@ export class ArticleService {
     },
     {
       id: 2,
-      imageUrl: './assets/images/photo_2_580w.jpg',
+      imageUrl: '/assets/images/photo_2_580w.jpg',
       title: 'Как с помощью дыхания избавиться от вредных привычек и не только',
       date: '04.03.2019',
       content: [
@@ -73,7 +73,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
@@ -87,7 +87,7 @@ export class ArticleService {
     },
     {
       id: 3,
-      imageUrl: './assets/images/photo_3_580w.jpg',
+      imageUrl: '/assets/images/photo_3_580w.jpg',
       title: 'Почему кундалини Йога работает всегда. Часть 2',
       date: '04.03.2019',
       content: [
@@ -98,7 +98,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
@@ -111,7 +111,7 @@ export class ArticleService {
     },
     {
       id: 4,
-      imageUrl: './assets/images/blog.jpg',
+      imageUrl: '/assets/images/blog.jpg',
       title: 'Как с помощью дыхания избавиться от недыхания',
       date: '04.03.2019',
       content: [
@@ -122,7 +122,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
@@ -136,7 +136,7 @@ export class ArticleService {
     },
     {
       id: 5,
-      imageUrl: './assets/images/photo_1.png',
+      imageUrl: '/assets/images/photo_1.png',
       title: 'Гнев',
       date: '04.03.2019',
       content: [
@@ -147,7 +147,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
@@ -161,7 +161,7 @@ export class ArticleService {
     },
     {
       id: 6,
-      imageUrl: './assets/images/photo_1.png',
+      imageUrl: '/assets/images/photo_1.png',
       title: 'Последняя статья',
       date: '05.03.2019',
       content: [
@@ -172,7 +172,7 @@ export class ArticleService {
           <p>В 2013 году прошла курс випасаны в традиции <a class="article__link" href="#">Саяджи У Ба Кхина</a> (С.Н.Гоенка) в Латвии.<br> В 2018 году закончила обучение на курсе подготовки учителей по Шакти Данс.</p>
           <p>Для Вероники йога - это способ жить счастливой и наполненной жизнью, в соответствии со своим внутренним миром и в состоянии полной гармонии. </p>
           `,
-          imageUrl: './assets/images/article_image_1.jpg',
+          imageUrl: '/assets/images/article_image_1.jpg',
         },
         {
           text: `
